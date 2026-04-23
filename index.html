@@ -1,0 +1,426 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Stadt Gladbeck | Neu gedacht</title>
+    <meta
+      name="description"
+      content="Modernisierte Konzeptseite fuer die Stadt Gladbeck mit aktuellen Inhalten, offiziellen Schnellzugriffen, redaktionellen Modulen und 9:16-Bildwelten."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Syne:wght@700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <script src="assets/js/main.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#hauptinhalt">Direkt zum Inhalt</a>
+    <div class="page-orb page-orb--lime" aria-hidden="true"></div>
+    <div class="page-orb page-orb--blue" aria-hidden="true"></div>
+    <div class="page-grid" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <a class="brand" href="#start" aria-label="Zur Startsektion">
+        <img
+          class="brand__logo"
+          src="assets/media/brand/gladbeck-logo.webp"
+          alt="Stadt Gladbeck"
+        />
+        <div class="brand__copy">
+          <span class="brand__eyebrow">Neu gedacht</span>
+          <strong>Stadtportal Gladbeck</strong>
+        </div>
+      </a>
+
+      <div class="site-header__actions">
+        <a class="header-link" href="#quicklinks">Services</a>
+        <a class="header-link" href="#aktuell">Aktuell</a>
+        <a class="header-link" href="#stories">Bildwelten</a>
+        <a class="header-link" href="#barrierefreiheit">Barrierefrei</a>
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="menu-overlay"
+        >
+          <span>Menue</span>
+          <span class="menu-toggle__icon" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+        </button>
+      </div>
+    </header>
+
+    <nav class="menu-overlay" id="menu-overlay" aria-hidden="true">
+      <button
+        class="menu-overlay__backdrop"
+        type="button"
+        aria-label="Menue schliessen"
+        data-menu-close
+      ></button>
+
+      <div class="menu-panel" role="dialog" aria-modal="true" aria-labelledby="menu-title">
+        <div class="menu-panel__top">
+          <div>
+            <p class="eyebrow">Einfach navigieren</p>
+            <h2 id="menu-title">Gladbeck Menue</h2>
+          </div>
+
+          <button class="menu-close" type="button" aria-label="Menue schliessen" data-menu-close>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+
+        <div class="menu-stage">
+          <div class="menu-track" id="menu-track"></div>
+        </div>
+
+        <div class="menu-panel__footer">
+          <div class="menu-panel__footer-brand">
+            <img src="assets/media/brand/gladbeck-100.webp" alt="100 Jahre Gladbeck" />
+            <p>Offizielle Inhalte, ein sichtbarer Fokus und lokale Bildwelten direkt im Menue.</p>
+          </div>
+          <div class="menu-panel__gallery" aria-label="Gladbeck Eindruecke">
+            <img src="csm_gladbeck_gladbecker-rundtour_bild01_1deed78dfb.jpg" alt="Wasserschloss Wittringen in Gladbeck" />
+            <img src="3L_12_01_ehrm_01_td.jpg" alt="Steinboegen im Ehrenmal Gladbeck" />
+            <img src="1906_115772_Rathaus_Gladbeck_klein (1).jpg" alt="Historische Ansicht des Rathauses Gladbeck" />
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <main id="hauptinhalt" tabindex="-1">
+      <section class="hero reveal" id="start">
+        <div class="section-shell hero__layout">
+          <div class="hero__copy">
+            <p class="eyebrow">Stadtportal Gladbeck | Inhaltsstand 23. April 2026</p>
+            <h1>
+              Gladbeck.
+              <br />
+              Klarer im Service,
+              <br />
+              staerker im Stadtleben.
+            </h1>
+            <p class="hero__intro">
+              Diese verfeinerte Konzeptseite uebernimmt aktuelle Themen aus dem offiziellen
+              Gladbeck-Portal und verdichtet sie auf eine modernere Startseite: klare Services,
+              sichtbare Stadt-News, redaktionelle Schwerpunktflaechen und 9:16-Module fuer
+              Kampagnen, Reels und Videoformate.
+            </p>
+
+            <div class="hero__actions">
+              <a class="button button--primary" href="#aktuell">Aktuelles ansehen</a>
+              <a class="button button--ghost" href="#quicklinks">Services oeffnen</a>
+              <a class="button button--ghost" href="#stories">Reels-Bereich ansehen</a>
+            </div>
+
+            <ul class="hero__chips" aria-label="Eigenschaften des Konzepts">
+              <li>Stand 23.04.2026</li>
+              <li>Offizielle Schnellzugriffe</li>
+              <li>Aktuelles + Termine</li>
+              <li>9:16-Reels und Kampagnen</li>
+              <li>Barrierearm umgesetzt</li>
+            </ul>
+          </div>
+
+          <div class="hero__visual">
+            <article class="hero-card hero-card--image">
+              <img
+                class="hero-card__media"
+                src="Gladnbeck_schloss_luftaufnahme_v16_9_1200.jpeg"
+                alt="Luftaufnahme vom Wasserschloss Wittringen in Gladbeck"
+                loading="eager"
+                fetchpriority="high"
+              />
+              <div class="hero-card__overlay">
+                <p class="hero-card__kicker">Headermotiv</p>
+                <h2>Wittringen setzt sofort den richtigen Ton fuer Service, Kultur und Stadtleben.</h2>
+                <ul class="hero-card__list">
+                  <li>Starkes lokales Bild statt generischer Verwaltungsoptik.</li>
+                  <li>Raum fuer Eventteaser, Videos und saisonale Schwerpunkte.</li>
+                  <li>Lesbare Overlays mit hohem Kontrast auch ueber Bildmotiven.</li>
+                </ul>
+              </div>
+            </article>
+
+            <div class="hero__visual-grid">
+              <article class="hero-card hero-card--signal">
+                <span class="hero-card__label">Naechster Termin</span>
+                <strong>Mobilitaets- und Klimatag am Sonntag, 26. April 2026, von 10 bis 15 Uhr am Wasserschloss Wittringen.</strong>
+              </article>
+
+              <article class="hero-card hero-card--rathaus">
+                <img
+                  class="hero-card__media"
+                  src="1906_115772_Rathaus_Gladbeck_klein (1).jpg"
+                  alt="Historische Ansicht des Rathauses Gladbeck"
+                  loading="lazy"
+                />
+                <div class="hero-card__overlay hero-card__overlay--compact">
+                  <p class="hero-card__kicker">Rathaus &amp; Zugang</p>
+                  <h2>Verwaltung mit klaren Wegen statt Huerden.</h2>
+                  <p>
+                    Skip-Link, sichtbarer Fokus, Swipe-Menue, hohe Kontraste und grosszuegige
+                    Touchflaechen sind direkt integriert.
+                  </p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--pulse reveal" id="aktuell">
+        <div class="section-shell">
+          <div class="section-heading section-heading--split">
+            <div>
+              <p class="eyebrow">Aktuell aus Gladbeck</p>
+              <h2>Redaktioneller Einstieg mit echtem Stadtstand statt generischer Teaser.</h2>
+            </div>
+            <p class="section-note">
+              Die folgenden Meldungen basieren auf den aktuellen Inhalten der offiziellen
+              Gladbeck-Startseite mit Stand Donnerstag, 23. April 2026.
+            </p>
+          </div>
+
+          <div class="pulse-rail">
+            <div class="pulse-rail__controls" aria-label="Navigation durch aktuelle Meldungen">
+              <p class="pulse-rail__hint">Wischen, ziehen oder mit dem Mausrad horizontal durch die Meldungen gehen.</p>
+              <div class="pulse-rail__buttons">
+                <button class="rail-button" type="button" data-pulse-prev aria-label="Vorherige Meldungen">
+                  <span aria-hidden="true">&larr;</span>
+                </button>
+                <button class="rail-button" type="button" data-pulse-next aria-label="Naechste Meldungen">
+                  <span aria-hidden="true">&rarr;</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="pulse-viewport" data-pulse-viewport tabindex="0" aria-label="Aktuelle Meldungen aus Gladbeck">
+              <div class="pulse-grid" id="pulse-grid"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--newsletter reveal" id="newsletter">
+        <div class="section-shell">
+          <div class="newsletter-panel">
+            <div class="newsletter-copy">
+              <p class="eyebrow">Newsletter Gladbeck</p>
+              <h2>Verpasse nichts in deiner Stadt!</h2>
+              <p>
+                Melde dich fuer einen kompakten Stadt-Newsletter an und bekomme aktuelle Themen,
+                Termine, Kultur, Baustellen und Rathausinfos gebuendelt in einem klaren Format.
+              </p>
+
+              <div class="newsletter-tags" aria-label="Newsletter Themen">
+                <span>Aktuelles</span>
+                <span>Veranstaltungen</span>
+                <span>Baustellen</span>
+                <span>Rathaus</span>
+                <span>Kultur</span>
+                <span>Familie</span>
+              </div>
+            </div>
+
+            <form class="newsletter-form" id="newsletter-form" novalidate>
+              <div class="newsletter-field">
+                <label for="newsletter-email">E-Mail-Adresse</label>
+                <input
+                  id="newsletter-email"
+                  name="email"
+                  type="email"
+                  autocomplete="email"
+                  placeholder="name@beispiel.de"
+                  required
+                  aria-describedby="newsletter-note newsletter-feedback"
+                />
+              </div>
+
+              <div class="newsletter-field">
+                <label for="newsletter-focus">Schwerpunkt</label>
+                <select id="newsletter-focus" name="focus">
+                  <option value="stadtweit">Ganz Gladbeck</option>
+                  <option value="kultur">Kultur &amp; Freizeit</option>
+                  <option value="rathaus">Rathaus &amp; Service</option>
+                  <option value="familie">Familie &amp; Bildung</option>
+                  <option value="mobilitaet">Mobilitaet &amp; Baustellen</option>
+                </select>
+              </div>
+
+              <label class="newsletter-check" for="newsletter-consent">
+                <input id="newsletter-consent" name="consent" type="checkbox" required />
+                <span>Ich stimme zu, dass diese Anmeldung im Prototyp geprueft wird.</span>
+              </label>
+
+              <div class="newsletter-actions">
+                <button class="button button--primary" type="submit">Newsletter vormerken</button>
+                <p class="newsletter-note" id="newsletter-note">
+                  Konzeptmodus: Im Livebetrieb wuerde hier die Anmeldung an einen echten Verteiler
+                  oder einen Dienst weitergeleitet.
+                </p>
+              </div>
+
+              <p class="newsletter-feedback" id="newsletter-feedback" aria-live="polite"></p>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <section class="signal-strip reveal" aria-label="Signalzeile">
+        <div class="signal-strip__track">
+          <span>Heimat-Preis 2026</span>
+          <span>Open-Air-Sommer</span>
+          <span>Gladbeck 2035</span>
+          <span>Mobilitaets- und Klimatag</span>
+          <span>Radvorrangroute</span>
+          <span>Jugendkonferenz 2026</span>
+        </div>
+      </section>
+
+      <section class="section reveal" id="quicklinks">
+        <div class="section-shell">
+          <div class="section-heading">
+            <p class="eyebrow">Offizielle Schnellzugriffe</p>
+            <h2>Die erste Ebene fuehrt direkt zu den Dingen, die Nutzerinnen und Nutzer wirklich brauchen.</h2>
+            <p>
+              Services, Termine, Kontaktdaten und politische Transparenz liegen sofort sichtbar auf
+              der Startseite und fuehren auf offizielle Ziele der Stadt.
+            </p>
+          </div>
+
+          <div class="quicklinks-grid" id="quicklinks-grid"></div>
+        </div>
+      </section>
+
+      <section class="section section--dense reveal" id="themen">
+        <div class="section-shell">
+          <div class="section-heading">
+            <p class="eyebrow">Themenfelder der Stadt</p>
+            <h2>Die grossen Bereiche bleiben erhalten, werden aber inhaltlich sichtbarer aufgeladen.</h2>
+            <p>
+              Jede Themenwelt verweist auf den offiziellen Bereich und zeigt gleichzeitig, welche
+              aktuellen Projekte, Meldungen oder Debatten dort gerade wirklich relevant sind.
+            </p>
+          </div>
+
+          <div class="themes-grid" id="themes-grid"></div>
+        </div>
+      </section>
+
+      <section class="section section--stories reveal" id="stories">
+        <div class="section-shell">
+          <div class="section-heading section-heading--split">
+            <div>
+              <p class="eyebrow">Bildwelten, Reels &amp; Kampagnen</p>
+              <h2>Aktuelle Gladbeck-Themen koennen als 9:16-Storys deutlich staerker inszeniert werden.</h2>
+            </div>
+            <p class="section-note">
+              Die lokale Bildsprache ist jetzt direkt eingebunden: Schloss, Rathaus,
+              Erinnerungsorte und Stadtlandschaften koennen als Reels, Story-Slides oder
+              Video-Teaser weiter ausgebaut werden.
+            </p>
+          </div>
+
+          <div class="stories-layout">
+            <article class="stories-feature stories-feature--gladbeck">
+              <p class="stories-feature__eyebrow">Medienbuehne</p>
+              <h3>Von Open-Air-Sommer bis Stadtentwicklung: Hier bekommt Gladbeck Haltung und Rhythmus.</h3>
+              <p>
+                Das Modul kombiniert eine starke Leitflaeche mit scrollbaren Hochformatkarten und
+                verlinkt direkt in aktuelle Themen, Kampagnen und Veranstaltungslinien der Stadt.
+              </p>
+
+              <div class="stories-feature__badges">
+                <span>Reels</span>
+                <span>Sommerprogramm</span>
+                <span>Stadtgespraeche</span>
+                <span>Event-Teaser</span>
+              </div>
+            </article>
+
+            <div class="stories-rail" id="stories-rail"></div>
+          </div>
+
+          <div class="video-slots" id="video-slots"></div>
+        </div>
+      </section>
+
+      <section class="section section--access reveal" id="barrierefreiheit">
+        <div class="section-shell">
+          <div class="section-heading section-heading--split">
+            <div>
+              <p class="eyebrow">Barrierefreier Zugang</p>
+              <h2>Die beste Loesung ist fest in die Seite eingebaut, nicht als nachtraegliches Widget.</h2>
+            </div>
+            <p class="section-note">
+              Die Seite priorisiert klare Bereiche, Touch- und Tastaturbedienung, lesbare
+              Kontraste und reduzierte Bewegung. So bleibt sie fuer eine breite Oeffentlichkeit
+              direkt nutzbar und spaeter um Leichte Sprache oder DGS-Angebote erweiterbar.
+            </p>
+          </div>
+
+          <div class="access-grid" id="access-grid"></div>
+        </div>
+      </section>
+
+      <section class="section reveal" id="newsroom">
+        <div class="section-shell">
+          <div class="section-heading">
+            <p class="eyebrow">Newsroom</p>
+            <h2>Aktuelle Meldungen aus dem offiziellen Portal werden als moderner Newsfeed lesbarer.</h2>
+            <p>
+              Die Struktur arbeitet mit einem Schwerpunkt, klaren Datumsmarken und direkter
+              Verlinkung auf `gladbeck.de`, statt Meldungen nur linear untereinander zu stapeln.
+            </p>
+          </div>
+
+          <div class="news-grid" id="news-grid"></div>
+        </div>
+      </section>
+
+      <section class="section section--agenda reveal" id="termine">
+        <div class="section-shell agenda-layout">
+          <div class="agenda-copy">
+            <p class="eyebrow">Naechste Termine &amp; Themen</p>
+            <h2>Die Startseite kann laufende Termine, Fristen und Stadttermine deutlich besser gewichten.</h2>
+            <p>
+              Heute, diese Woche und in den naechsten Tagen relevante Termine wirken hier nicht
+              wie versteckte Randnotizen, sondern wie echte redaktionelle Signale auf der Startseite.
+            </p>
+          </div>
+
+          <div class="agenda-list" id="agenda-list"></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer__brand">
+        <img src="assets/media/brand/gladbeck-logo.webp" alt="Stadt Gladbeck" />
+        <p>Modernisierte Konzeptseite mit aktuellen Inhalten, offiziellen Links und staerkerer redaktioneller Gewichtung.</p>
+      </div>
+
+      <div class="site-footer__links">
+        <a href="#aktuell">Aktuell</a>
+        <a href="#quicklinks">Services</a>
+        <a href="#themen">Themen</a>
+        <a href="#stories">Reels</a>
+        <a href="#barrierefreiheit">Barrierefrei</a>
+        <a href="#newsroom">Aktuelles</a>
+      </div>
+
+      <p class="site-footer__meta">
+        Konzeptjahr <span id="footer-year"></span> | Inhaltsstand <span id="footer-content-date">23.04.2026</span>
+      </p>
+    </footer>
+  </body>
+</html>
