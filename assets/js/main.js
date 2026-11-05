@@ -1,36 +1,36 @@
 const CONTENT_STAND = "23.04.2026";
 const OFFICIAL_BASE = "https://www.gladbeck.de";
-const EXTERNAL_ATTRS = 'target="_blank" rel="noreferrer noopener"';
+const EXTERNAL_ATTRS = 'rel="external"';
 
 const pulseItems = [
   {
     label: "23.04.2026",
-    title: "Heimat-Preis 2026: Bewerbungen sind ab sofort moeglich",
-    text: "Bewerbungen fuer den Heimat-Preis laufen jetzt. Buergermeisterin Bettina Weist lobt erneut 5.000 Euro aus.",
+    title: "Heimat-Preis 2026: Engagement auszeichnen",
+    text: "5.000 Euro f\u00fcr ehrenamtliches Engagement: Die Stadt informierte im April \u00fcber den Heimat-Preis 2026.",
     href: `${OFFICIAL_BASE}/index.asp?form=detail&db=404&id=5524`,
   },
   {
     label: "23.04.2026",
-    title: "Open-Air-Sommer in Gladbeck mit vollem Programm",
-    text: "Die Stadt buendelt Konzerte, Sommerabende und Veranstaltungshighlights in einer klar sichtbaren Programmlinie.",
+    title: "Ein Sommer voller Kultur",
+    text: "Konzerte, Sommerabende und Begegnungen unter freiem Himmel: ein Blick auf das Sommerprogramm 2026.",
     href: `${OFFICIAL_BASE}/index.asp?form=detail&db=404&id=5525`,
   },
   {
     label: "22.04.2026",
-    title: "Dialogveranstaltung in Ellinghorst mit der Buergermeisterin",
-    text: "Das Format 'Triff die Buergermeisterin' zeigt, wie lokale Rueckmeldungen sichtbarer in die Startseite koennen.",
+    title: "Ellinghorst kommt ins Gespr\u00e4ch",
+    text: "Im direkten Austausch mit der B\u00fcrgermeisterin ging es um Fragen und Ideen aus dem Stadtteil.",
     href: `${OFFICIAL_BASE}/index.asp?form=detail&db=404&id=5526`,
   },
   {
     label: "21.04.2026",
-    title: "Europaeische Jugendkonferenz 2026 staerkt internationale Zusammenarbeit",
-    text: "Im Mai 2026 findet die vierte Jugendkonferenz statt und setzt einen klaren Schwerpunkt auf Europa und Austausch.",
+    title: "Junge Ideen f\u00fcr Europa",
+    text: "Die vierte Jugendkonferenz im Mai 2026 stand im Zeichen von Europa und internationalem Austausch.",
     href: `${OFFICIAL_BASE}/index.asp?form=detail&db=404&id=5521`,
   },
   {
     label: "17.04.2026",
-    title: "Strassensanierungen laufen seit Montag, 20. April, in mehreren Stadtteilen",
-    text: "Verkehrs- und Baustellenhinweise bekommen hier einen schnelleren, sichtbaren Einstieg als im aktuellen Auftritt.",
+    title: "Neue Wege f\u00fcr Gladbeck",
+    text: "Im April begannen Stra\u00dfensanierungen in mehreren Stadtteilen. Details und Hintergr\u00fcnde im offiziellen Beitrag.",
     href: `${OFFICIAL_BASE}/index.asp?form=detail&db=404&id=5519`,
   },
 ];
@@ -40,7 +40,7 @@ const quicklinks = [
     tone: "lime",
     label: "24/7 erledigen",
     title: "Serviceportal",
-    text: "Digitale Dienstleistungen fuer Pass-, Melde-, Gewerbe- und Lebensthemen zentral erreichbar.",
+    text: "Digitale Dienstleistungen f\u00fcr Pass-, Melde-, Gewerbe- und Lebensthemen zentral erreichbar.",
     meta: "Offiziell",
     href: "https://serviceportal.gladbeck.de/",
   },
@@ -48,7 +48,7 @@ const quicklinks = [
     tone: "navy",
     label: "Termin sichern",
     title: "Online-Termine",
-    text: "Buergeramt und Auslaenderamt koennen direkt online gebucht werden.",
+    text: "Termine im B\u00fcrgeramt und Ausl\u00e4nderamt direkt online buchen.",
     meta: "Rathaus",
     href: `${OFFICIAL_BASE}/onlinetermin`,
   },
@@ -72,7 +72,7 @@ const quicklinks = [
     tone: "light",
     label: "Politik live",
     title: "Ratssitzungen",
-    text: "Videouebertragungen und politische Sitzungsinformationen transparent aufbereitet.",
+    text: "Video\u00fcbertragungen und politische Sitzungsinformationen transparent aufbereitet.",
     meta: "Livestream",
     href: `${OFFICIAL_BASE}/Rathaus_Politik/Politik/Rat_der_Stadt/Videouebertragungen.asp`,
   },
@@ -81,7 +81,7 @@ const quicklinks = [
     label: "Verkehr",
     title: "Aktuelle Baustellen",
     text: "Sperrungen, Sanierungen und laufende Verkehrsmassnahmen in Gladbeck.",
-    meta: "Mobilitaet",
+    meta: "Mobilit\u00e4t",
     href: `${OFFICIAL_BASE}/Leben_Wohnen/Ingenieuramt_Beta/Aktuelle_Baustellen/autostart.asp`,
   },
 ];
@@ -91,8 +91,8 @@ const themes = [
     id: "rathaus",
     tone: "navy",
     label: "Rathaus & Politik",
-    title: "Heimat-Preis, Rathaus News und Ratssitzungen bekommen hier eine staerkere Buehne.",
-    text: "Verwaltung und Politik werden nicht nur verlinkt, sondern mit aktuellen Schwerpunkten lesbar gemacht.",
+    title: "Rathaus & Politik",
+    text: "Dein Kontakt zur Verwaltung. Entscheidungen verstehen und die eigene Stadt mitgestalten.",
     tags: ["Heimat-Preis 2026", "Rathaus News", "Ratssitzungen"],
     href: `${OFFICIAL_BASE}/Rathaus_Politik/autostart.asp`,
   },
@@ -100,26 +100,30 @@ const themes = [
     id: "familie",
     tone: "lime",
     label: "Familie & Bildung",
-    title: "Fruehkindliche Bildung, Spielplaetze und Angebote fuer Generationen werden sichtbarer.",
-    text: "Der Bereich kann aktuelle Familien-, Schul- und Beteiligungsthemen deutlich naeher am Alltag ausspielen.",
-    tags: ["Fruehe Bildung", "Spielplatz Hunsrueckstrasse", "Seniorenprogramm"],
+    title: "Familie & Bildung",
+    text: "Von den ersten Schritten bis ins hohe Alter: Angebote f\u00fcr jede Generation.",
+    tags: [
+      "Fr\u00fche Bildung",
+      "Spielplatz Hunsr\u00fcckstra\u00dfe",
+      "Seniorenprogramm",
+    ],
     href: `${OFFICIAL_BASE}/Familie_Bildung/autostart.asp`,
   },
   {
     id: "wohnen",
     tone: "light",
     label: "Leben & Wohnen",
-    title: "Radvorrangroute, Strassensanierungen und Baustellen werden zu klaren Stadtinfos.",
-    text: "Genau hier zeigt sich der Mehrwert eines portalfesten News- und Servicelayers fuer Mobilitaet und Quartiere.",
-    tags: ["Radvorrangroute", "Europabruecke", "Baustellen"],
+    title: "Leben & Wohnen",
+    text: "Ein Zuhause finden, mobil bleiben und das eigene Quartier kennenlernen.",
+    tags: ["Radvorrangroute", "Europabr\u00fccke", "Baustellen"],
     href: `${OFFICIAL_BASE}/Leben_Wohnen/autostart.asp`,
   },
   {
     id: "wirtschaft",
     tone: "sand",
     label: "Wirtschaft",
-    title: "Vom Feierabendmarkt bis zum Standortthema kann Gladbeck wirtschaftlich profilierter auftreten.",
-    text: "Der Wirtschaftsbereich braucht Raum fuer Projekte, Ausschreibungen, Entwicklung und lokalen Handel.",
+    title: "Wirtschaft & Arbeit",
+    text: "Raum f\u00fcr gute Ideen: Standort, Handel, Ausschreibungen und wirtschaftliche Entwicklung.",
     tags: ["Feierabendmarkt", "Ausschreibungen", "Standort"],
     href: `${OFFICIAL_BASE}/Wirtschaft/index2.asp`,
   },
@@ -127,17 +131,17 @@ const themes = [
     id: "kultur",
     tone: "navy",
     label: "Kultur & Tourismus",
-    title: "Open-Air-Sommer, Stadtbuecherei und kulturelle Reihen werden deutlich atmosphaerischer.",
-    text: "Kultur profitiert am staerksten von der neuen Gewichtung aus Bild, Termin und Storytelling.",
-    tags: ["Open-Air-Sommer", "Stadtbuecherei", "Sehenswuerdigkeiten"],
+    title: "Kultur & Entdecken",
+    text: "Neue Lieblingsorte, gute Geschichten und Kultur direkt vor der Haust\u00fcr.",
+    tags: ["Open-Air-Sommer", "Stadtb\u00fccherei", "Sehensw\u00fcrdigkeiten"],
     href: `${OFFICIAL_BASE}/Kultur_Tourismus/autostart.asp`,
   },
   {
     id: "sport",
     tone: "lime",
     label: "Sport & Freizeit",
-    title: "Beachanlage, Hallenbad und Freizeitthemen koennen im Alltag sichtbarer werden.",
-    text: "Sport und Freizeit verdienen einen aufgeraeumten Bereich mit aktuellen Hinweisen, Terminen und Bewegtbild.",
+    title: "Sport & Freizeit",
+    text: "In Bewegung kommen, gemeinsam aktiv sein oder einfach die freie Zeit genie\u00dfen.",
     tags: ["Beachanlage Nordpark", "Hallenbad", "Freizeit"],
     href: `${OFFICIAL_BASE}/Sport_Freizeit/autostart.asp`,
   },
@@ -145,19 +149,25 @@ const themes = [
 
 const stories = [
   {
-    title: "Mobilitaets- und Klimatag",
-    badge: "26.04.2026",
-    text: "Das Wasserschloss kann als 9:16-Einstieg fuer Eventteaser, Familienangebote und nachhaltige Mobilitaet dienen.",
-    image: "Gladnbeck_schloss_luftaufnahme_v16_9_1200.jpeg",
+    title: "Wittringen von oben",
+    badge: "Lieblingsorte",
+    text: "Ein neuer Blick auf das Wasserschloss und die gr\u00fcnen Wege rundherum.",
+    image: new URL(
+      "../../Gladnbeck_schloss_luftaufnahme_v16_9_1200.jpeg",
+      import.meta.url,
+    ).href,
     alt: "Luftaufnahme vom Wasserschloss Wittringen in Gladbeck",
     position: "center center",
-    href: `${OFFICIAL_BASE}/index.asp?form=detail&db=404&id=5498`,
+    href: `${OFFICIAL_BASE}/Kultur_Tourismus/Sehenswuerdigkeiten/autostart.asp`,
   },
   {
     title: "Wittringen & Rundtour",
     badge: "Stadt entdecken",
-    text: "Tourismus, Sommerprogramm und kurze Videoformate koennen ueber reale Gladbeck-Motive deutlich atmosphaerischer starten.",
-    image: "csm_gladbeck_gladbecker-rundtour_bild01_1deed78dfb.jpg",
+    text: "Am Wasser entlang und mitten ins Gr\u00fcne. Finde deine n\u00e4chste kleine Auszeit.",
+    image: new URL(
+      "../../csm_gladbeck_gladbecker-rundtour_bild01_1deed78dfb.jpg",
+      import.meta.url,
+    ).href,
     alt: "Wasserschloss Wittringen mit Spiegelung im Wasser",
     position: "center center",
     href: `${OFFICIAL_BASE}/Kultur_Tourismus/Sehenswuerdigkeiten/autostart.asp`,
@@ -165,8 +175,11 @@ const stories = [
   {
     title: "Rathaus & Politik",
     badge: "Service direkt",
-    text: "Das Rathaus bekommt eine eigene Bildsprache fuer politische Transparenz, Rufnummern und digitale Dienstleistungen.",
-    image: "1906_115772_Rathaus_Gladbeck_klein (1).jpg",
+    text: "Ein Haus f\u00fcr die Stadt: Menschen, Politik und deine Anliegen an einem Ort.",
+    image: new URL(
+      "../../1906_115772_Rathaus_Gladbeck_klein (1).jpg",
+      import.meta.url,
+    ).href,
     alt: "Historische Ansicht des Rathauses Gladbeck",
     position: "center top",
     href: `${OFFICIAL_BASE}/Rathaus_Politik/autostart.asp`,
@@ -174,9 +187,9 @@ const stories = [
   {
     title: "Erinnerungsorte",
     badge: "Kulturraum",
-    text: "Auch kulturelle und historische Orte funktionieren als ruhige, hochwertige Story-Einstiege fuer die Stadt.",
-    image: "3L_12_01_ehrm_01_td.jpg",
-    alt: "Steinboegen im Ehrenmal Gladbeck",
+    text: "Orte, die Geschichte erz\u00e4hlen. Entdecke das kulturelle Ged\u00e4chtnis Gladbecks.",
+    image: new URL("../../3L_12_01_ehrm_01_td.jpg", import.meta.url).href,
+    alt: "Steinb\u00f6gen im Ehrenmal Gladbeck",
     position: "center center",
     href: `${OFFICIAL_BASE}/Kultur_Tourismus/autostart.asp`,
   },
@@ -187,14 +200,14 @@ const videoSlots = [
     tone: "navy",
     badge: "Rathaus News",
     title: "26. Ausgabe online",
-    text: "Die April-Ausgabe buendelt aktuelle Themen aus der Stadtverwaltung in einem modularen Redaktionsformat.",
+    text: "Die April-Ausgabe b\u00fcndelt aktuelle Themen aus der Stadtverwaltung in einem modularen Redaktionsformat.",
     href: `${OFFICIAL_BASE}/index.asp?form=detail&db=404&id=5517`,
     cta: "Zur Meldung",
   },
   {
     tone: "lime",
     badge: "Event-Teaser",
-    title: "Mobilitaets- und Klimatag",
+    title: "Mobilit\u00e4ts- und Klimatag",
     text: "Sonntag, 26. April 2026, 10 bis 15 Uhr am Wasserschloss Wittringen.",
     href: `${OFFICIAL_BASE}/index.asp?form=detail&db=404&id=5498`,
     cta: "Zum Termin",
@@ -203,7 +216,7 @@ const videoSlots = [
     tone: "light",
     badge: "Sommerprogramm",
     title: "Open-Air-Sommer",
-    text: "Ein Slot fuer Teaser-Reels, Programmlinien, Social-Clips und spaetere Ticket- oder Ablaufmodule.",
+    text: "Das Sommerprogramm 2026: Musik, Begegnungen und Kultur unter freiem Himmel.",
     href: `${OFFICIAL_BASE}/index.asp?form=detail&db=404&id=5525`,
     cta: "Zum Programm",
   },
@@ -214,43 +227,43 @@ const news = [
     tone: "feature",
     label: "Kultur",
     date: "23.04.2026",
-    title: "Open-Air-Sommer in Gladbeck mit vollem Programm",
-    text: "Wer gerne unter freiem Himmel feiert, Live-Musik geniesst und sommerliche Stadtmomente sucht, bekommt 2026 eine sichtbare Programmbuehne.",
+    title: "Ein Sommer voller Kultur",
+    text: "Musik und Begegnungen unter freiem Himmel: ein R\u00fcckblick auf das Sommerprogramm 2026.",
     href: `${OFFICIAL_BASE}/index.asp?form=detail&db=404&id=5525`,
   },
   {
-    label: "Foerderung",
+    label: "F\u00f6rderung",
     date: "23.04.2026",
     title: "Heimat-Preis 2026 startet mit Bewerbungsphase",
-    text: "Der mit 5.000 Euro dotierte Preis macht lokales Engagement zum redaktionellen Schwerpunkt.",
+    text: "Ein Preis f\u00fcr Menschen, die sich vor Ort engagieren. Die Meldung zur Bewerbungsphase im April 2026.",
     href: `${OFFICIAL_BASE}/index.asp?form=detail&db=404&id=5524`,
   },
   {
     label: "Dialog",
     date: "22.04.2026",
-    title: "Ellinghorst: Stadtgespraech mit der Buergermeisterin",
-    text: "Direkter Austausch im Stadtteil wird zu einem sichtbaren Format auf der Startseite.",
+    title: "Ellinghorst: Stadtgespr\u00e4ch mit der B\u00fcrgermeisterin",
+    text: "Fragen stellen, Ideen teilen und miteinander ins Gespr\u00e4ch kommen: der Dialog in Ellinghorst.",
     href: `${OFFICIAL_BASE}/index.asp?form=detail&db=404&id=5526`,
   },
   {
     label: "Europa",
     date: "21.04.2026",
-    title: "Jugendkonferenz 2026 setzt europaeischen Akzent",
-    text: "Gladbeck fuehrt den Jugendaustausch mit einer vierten Konferenz im Mai 2026 fort.",
+    title: "Jugendkonferenz 2026 setzt europ\u00e4ischen Akzent",
+    text: "Die vierte Jugendkonferenz brachte im Mai 2026 junge Menschen zum europ\u00e4ischen Austausch zusammen.",
     href: `${OFFICIAL_BASE}/index.asp?form=detail&db=404&id=5521`,
   },
   {
-    label: "Mobilitaet",
+    label: "Mobilit\u00e4t",
     date: "17.04.2026",
-    title: "Strassensanierungen starten in mehreren Stadtteilen",
-    text: "Seit Montag, 20. April 2026, laufen umfangreiche Massnahmen mit hohem Servicebedarf fuer Verkehr und Orientierung.",
+    title: "Stra\u00dfensanierungen starten in mehreren Stadtteilen",
+    text: "Hintergr\u00fcnde zu den im April gestarteten Arbeiten und den betroffenen Stadtteilen.",
     href: `${OFFICIAL_BASE}/index.asp?form=detail&db=404&id=5519`,
   },
   {
     label: "Stadtentwicklung",
     date: "31.03.2026",
     title: "Radvorrangroute: Gladbeck plant Anschluss ab 2027",
-    text: "Mobilitaetsprojekte wie diese brauchen eine prominentere Darstellung zwischen News, Karte und Baustellenlayer.",
+    text: "Die Planungen zum Anschluss Gladbecks an die Radvorrangroute im \u00dcberblick.",
     href: `${OFFICIAL_BASE}/index.asp?form=detail&db=404&id=5507`,
   },
 ];
@@ -259,24 +272,24 @@ const agenda = [
   {
     label: "23.04.2026",
     title: "Zukunftsforum 'Gladbeck 2035'",
-    text: "Oeffentliche Veranstaltung heute von 17 bis 18.30 Uhr im Ratssaal des Alten Rathauses.",
+    text: "\u00d6ffentliche Veranstaltung am 23. April 2026, 17 bis 18.30 Uhr, im Ratssaal des Alten Rathauses.",
     href: `${OFFICIAL_BASE}/index.asp?form=detail&db=404&id=5516`,
   },
   {
     label: "26.04.2026",
-    title: "Mobilitaets- und Klimatag",
-    text: "Familienfest rund um nachhaltige Mobilitaet und Klimaschutz am Wasserschloss Wittringen.",
+    title: "Mobilit\u00e4ts- und Klimatag",
+    text: "Familienfest rund um nachhaltige Mobilit\u00e4t und Klimaschutz am Wasserschloss Wittringen.",
     href: `${OFFICIAL_BASE}/index.asp?form=detail&db=404&id=5498`,
   },
   {
     label: "30.04.2026",
     title: "Empfang der Arbeitnehmer:innen",
-    text: "Buergermeisterin Bettina Weist laedt um 18.30 Uhr in den Ratssaal des Alten Rathauses ein.",
+    text: "B\u00fcrgermeisterin Bettina Weist l\u00e4dt um 18.30 Uhr in den Ratssaal des Alten Rathauses ein.",
     href: `${OFFICIAL_BASE}/index.asp?form=detail&db=404&id=5514`,
   },
   {
     label: "Mai 2026",
-    title: "Europaeische Jugendkonferenz",
+    title: "Europ\u00e4ische Jugendkonferenz",
     text: "Gladbeck baut die internationale Zusammenarbeit mit Jugendlichen weiter aus.",
     href: `${OFFICIAL_BASE}/index.asp?form=detail&db=404&id=5521`,
   },
@@ -286,7 +299,7 @@ const menuSections = [
   {
     id: "rathaus",
     title: "Rathaus & Politik",
-    description: "Rathausdienste, politische Transparenz und Kontaktwege auf direkter Route.",
+    description: "Service, Kontakte und Entscheidungen.",
     items: [
       {
         title: "Serviceportal",
@@ -295,7 +308,7 @@ const menuSections = [
       },
       {
         title: "Ratssitzungen",
-        text: "Videouebertragungen und Sitzungsinformationen",
+        text: "Video\u00fcbertragungen und Sitzungsinformationen",
         href: `${OFFICIAL_BASE}/Rathaus_Politik/Politik/Rat_der_Stadt/Videouebertragungen.asp`,
       },
       {
@@ -308,7 +321,7 @@ const menuSections = [
   {
     id: "familie",
     title: "Familie & Bildung",
-    description: "Schule, Jugend, Senioren und alltagsnahe Angebote fuer unterschiedliche Lebensphasen.",
+    description: "Schule, Jugend und Angebote f\u00fcr Generationen.",
     items: [
       {
         title: "Schule",
@@ -317,12 +330,12 @@ const menuSections = [
       },
       {
         title: "Senioren",
-        text: "Angebote und Informationen fuer aeltere Menschen",
+        text: "Angebote und Informationen f\u00fcr \u00e4ltere Menschen",
         href: `${OFFICIAL_BASE}/Familie_Bildung/Senioren/autostart.asp`,
       },
       {
         title: "Jugendrat",
-        text: "Mitwirkung und Beteiligung fuer junge Gladbecker:innen",
+        text: "Mitwirkung und Beteiligung f\u00fcr junge Gladbecker:innen",
         href: `${OFFICIAL_BASE}/Familie_Bildung/Jugend/Jugendrat/autostart.asp`,
       },
     ],
@@ -330,7 +343,7 @@ const menuSections = [
   {
     id: "wohnen",
     title: "Leben & Wohnen",
-    description: "Mobilitaet, Stadtentwicklung, Baugebiete und Orientierung im Stadtalltag.",
+    description: "Wohnen, Bauen und unterwegs sein.",
     items: [
       {
         title: "Aktuelle Baustellen",
@@ -339,7 +352,7 @@ const menuSections = [
       },
       {
         title: "Baugebiete",
-        text: "Wohnen und neue Flaechen in Gladbeck",
+        text: "Wohnen und neue Fl\u00e4chen in Gladbeck",
         href: `${OFFICIAL_BASE}/Leben_Wohnen/Bauen_Wohnen/Baugebiete_in_Gladbeck.asp`,
       },
       {
@@ -352,7 +365,7 @@ const menuSections = [
   {
     id: "wirtschaft",
     title: "Wirtschaft",
-    description: "Standort, Ausschreibungen und lokale Entwicklung mit staerkerem Profil.",
+    description: "Standort, Handel und gute Ideen.",
     items: [
       {
         title: "Wirtschaftsbereich",
@@ -374,10 +387,10 @@ const menuSections = [
   {
     id: "kultur",
     title: "Kultur & Tourismus",
-    description: "Programm, Orte und Reihen mit mehr Atmosphaere und staerkerer Sichtbarkeit.",
+    description: "Kultur erleben und Lieblingsorte entdecken.",
     items: [
       {
-        title: "Sehenswuerdigkeiten",
+        title: "Sehensw\u00fcrdigkeiten",
         text: "Klassische touristische Einstiege",
         href: `${OFFICIAL_BASE}/Kultur_Tourismus/Sehenswuerdigkeiten/autostart.asp`,
       },
@@ -387,7 +400,7 @@ const menuSections = [
         href: `${OFFICIAL_BASE}/index.asp?form=detail&db=404&id=5525`,
       },
       {
-        title: "Stadtbuecherei",
+        title: "Stadtb\u00fccherei",
         text: "Kleinkunst, Lesung und Kindertheater",
         href: `${OFFICIAL_BASE}/index.asp?form=detail&db=404&id=5522`,
       },
@@ -396,7 +409,7 @@ const menuSections = [
   {
     id: "sport",
     title: "Sport & Freizeit",
-    description: "Freizeitorte, sportliche Infrastruktur und Events fuer aktive Nutzung.",
+    description: "Aktiv werden und Freizeit genie\u00dfen.",
     items: [
       {
         title: "Sport & Freizeit",
@@ -405,11 +418,11 @@ const menuSections = [
       },
       {
         title: "Beachanlage Nordpark",
-        text: "Die Anlage ist seit dem 7. April 2026 wieder geoeffnet",
+        text: "Die Anlage ist seit dem 7. April 2026 wieder ge\u00f6ffnet",
         href: `${OFFICIAL_BASE}/index.asp?form=detail&db=404&id=5508`,
       },
       {
-        title: "Mobilitaets- und Klimatag",
+        title: "Mobilit\u00e4ts- und Klimatag",
         text: "Familienfest mit Aktivitaeten am Wasserschloss Wittringen",
         href: `${OFFICIAL_BASE}/index.asp?form=detail&db=404&id=5498`,
       },
@@ -420,23 +433,23 @@ const menuSections = [
 const accessFeatures = [
   {
     label: "Orientierung",
-    title: "Skip-Link und klare Seitenbereiche",
-    text: "Der Einstieg springt direkt in den Hauptinhalt. Header, Hauptbereich, Menue und Inhaltssektionen bleiben semantisch sauber getrennt.",
+    title: "Direkt zum Inhalt",
+    text: "Mit dem ersten Tastatursprung gelangst du zum Hauptinhalt. Klare \u00dcberschriften helfen bei der Orientierung.",
   },
   {
-    label: "Menue",
-    title: "Swipe, Drag und Tastatur im selben Muster",
-    text: "Das Menue laesst sich mit Touch, Maus, Mausrad und Pfeiltasten nutzen. Der Fokus bleibt sichtbar und folgt der aktiven Position.",
+    label: "Men\u00fc",
+    title: "So, wie du navigierst",
+    text: "Men\u00fc und Meldungen lassen sich per Tastatur, Touch und Maus bedienen. Der Tastaturfokus bleibt sichtbar.",
   },
   {
     label: "Lesbarkeit",
-    title: "Kontraststarke Bild-Overlays und ruhige Bewegung",
-    text: "Text liegt auf lesbaren Flaechen, Fokusmarken sind deutlich sichtbar und reduzierte Bewegung wird automatisch respektiert.",
+    title: "In deinem Tempo",
+    text: "Text liegt auf ruhigen Fl\u00e4chen. Wenn dein Ger\u00e4t weniger Bewegung bevorzugt, werden Animationen ausgeschaltet.",
   },
   {
     label: "Reichweite",
-    title: "Grosse Touchziele und ausbaubare Oeffentlichkeit",
-    text: "Grosszuegige Klickflaechen helfen vielen Nutzergruppen sofort. Das Konzept laesst sich spaeter um Leichte Sprache und DGS-Module erweitern.",
+    title: "Mehr Platz zum Treffen",
+    text: "Gut erreichbare Schaltfl\u00e4chen und umbrochene Texte erleichtern die Bedienung auch auf kleinen Bildschirmen.",
   },
 ];
 
@@ -461,7 +474,9 @@ const newsletterForm = document.querySelector("#newsletter-form");
 const newsletterEmail = document.querySelector("#newsletter-email");
 const newsletterConsent = document.querySelector("#newsletter-consent");
 const newsletterFeedback = document.querySelector("#newsletter-feedback");
-const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const prefersReducedMotion = window.matchMedia(
+  "(prefers-reduced-motion: reduce)",
+).matches;
 
 function renderPulse() {
   pulseGrid.innerHTML = pulseItems
@@ -470,11 +485,11 @@ function renderPulse() {
         <a class="pulse-card ${index === 0 ? "pulse-card--feature" : ""}" href="${item.href}" ${EXTERNAL_ATTRS}>
           <div class="pulse-card__meta">
             <span>${item.label}</span>
-            <span>gladbeck.de</span>
+            <span>${String(index + 1).padStart(2, "0")}</span>
           </div>
           <h3>${item.title}</h3>
           <p>${item.text}</p>
-          <span class="pulse-card__cta">Offiziellen Beitrag oeffnen</span>
+          <span class="pulse-card__cta">Beitrag lesen</span>
         </a>
       `,
     )
@@ -535,7 +550,7 @@ function renderStories() {
             <h3>${story.title}</h3>
             <p>${story.text}</p>
             <div class="story-card__footer">
-              <span>Offizielles Thema</span>
+              <span>Mehr entdecken</span>
               <span class="story-card__arrow" aria-hidden="true">&rarr;</span>
             </div>
           </div>
@@ -560,7 +575,12 @@ function renderAccess() {
 }
 
 function setupNewsletter() {
-  if (!newsletterForm || !newsletterEmail || !newsletterConsent || !newsletterFeedback) {
+  if (
+    !newsletterForm ||
+    !newsletterEmail ||
+    !newsletterConsent ||
+    !newsletterFeedback
+  ) {
     return;
   }
 
@@ -569,20 +589,23 @@ function setupNewsletter() {
     newsletterFeedback.classList.remove("is-error", "is-success");
 
     if (!newsletterEmail.checkValidity()) {
-      newsletterFeedback.textContent = "Bitte gib eine gueltige E-Mail-Adresse ein.";
+      newsletterFeedback.textContent =
+        "Bitte gib eine g\u00fcltige E-Mail-Adresse ein.";
       newsletterFeedback.classList.add("is-error");
       newsletterEmail.reportValidity();
       return;
     }
 
     if (!newsletterConsent.checked) {
-      newsletterFeedback.textContent = "Bitte bestaetige zuerst die Zustimmung fuer den Prototyp.";
+      newsletterFeedback.textContent =
+        "Bitte best\u00e4tige, dass du das Formular ausprobieren m\u00f6chtest.";
       newsletterFeedback.classList.add("is-error");
       newsletterConsent.focus();
       return;
     }
 
-    newsletterFeedback.textContent = "Vorgemerkt. Im Livebetrieb wuerde diese Anmeldung jetzt an den Newsletter-Dienst uebergeben.";
+    newsletterFeedback.textContent =
+      "Das Formular ist korrekt ausgef\u00fcllt. In dieser Demo wurden keine Daten gespeichert und keine E-Mails versendet.";
     newsletterFeedback.classList.add("is-success");
     newsletterForm.reset();
   });
@@ -594,7 +617,6 @@ function renderVideoSlots() {
       (slot) => `
         <a class="video-slot video-slot--${slot.tone}" href="${slot.href}" ${EXTERNAL_ATTRS}>
           <span class="video-slot__badge">${slot.badge}</span>
-          <span class="video-slot__play" aria-hidden="true">&#9658;</span>
           <h3>${slot.title}</h3>
           <p>${slot.text}</p>
           <span class="video-slot__cta">${slot.cta}</span>
@@ -622,210 +644,6 @@ function renderNews() {
     .join("");
 }
 
-function setupCardSpotlights() {
-  document.querySelectorAll(".pulse-card, .theme-card, .news-card").forEach((card) => {
-    card.addEventListener("pointermove", (event) => {
-      if (event.pointerType === "touch") {
-        return;
-      }
-
-      const rect = card.getBoundingClientRect();
-      const x = ((event.clientX - rect.left) / rect.width) * 100;
-      const y = ((event.clientY - rect.top) / rect.height) * 100;
-      card.style.setProperty("--spotlight-x", `${x}%`);
-      card.style.setProperty("--spotlight-y", `${y}%`);
-    });
-
-    card.addEventListener("pointerleave", () => {
-      card.style.removeProperty("--spotlight-x");
-      card.style.removeProperty("--spotlight-y");
-    });
-  });
-}
-
-function setupPulseRail() {
-  if (!pulseViewport || !pulseGrid) {
-    return;
-  }
-
-  const getStep = () => {
-    const firstCard = pulseGrid.querySelector(".pulse-card");
-
-    if (!firstCard) {
-      return 320;
-    }
-
-    const cardWidth = firstCard.getBoundingClientRect().width;
-    const gap = Number.parseFloat(window.getComputedStyle(pulseGrid).columnGap || "16");
-    return cardWidth + gap;
-  };
-
-  const scrollRail = (direction) => {
-    pulseViewport.scrollBy({
-      left: getStep() * direction,
-      behavior: prefersReducedMotion ? "auto" : "smooth",
-    });
-  };
-
-  const syncControls = () => {
-    const maxScrollLeft = Math.max(0, pulseViewport.scrollWidth - pulseViewport.clientWidth);
-    const currentScrollLeft = Math.round(pulseViewport.scrollLeft);
-    const atStart = currentScrollLeft <= 1;
-    const atEnd = currentScrollLeft >= maxScrollLeft - 1;
-
-    if (pulsePrevButton) {
-      pulsePrevButton.disabled = atStart;
-      pulsePrevButton.setAttribute("aria-disabled", String(atStart));
-    }
-
-    if (pulseNextButton) {
-      pulseNextButton.disabled = atEnd;
-      pulseNextButton.setAttribute("aria-disabled", String(atEnd));
-    }
-  };
-
-  pulsePrevButton?.addEventListener("click", () => scrollRail(-1));
-  pulseNextButton?.addEventListener("click", () => scrollRail(1));
-
-  pulseViewport.addEventListener("wheel", (event) => {
-    const dominantDelta = Math.abs(event.deltaY) > Math.abs(event.deltaX) ? event.deltaY : event.deltaX;
-
-    if (dominantDelta === 0) {
-      return;
-    }
-
-    event.preventDefault();
-    pulseViewport.scrollLeft += dominantDelta;
-  }, {
-    passive: false,
-  });
-
-  let dragPointerId = null;
-  let dragStartX = 0;
-  let dragStartY = 0;
-  let dragStartLeft = 0;
-  let isDragging = false;
-  let isPressed = false;
-  let dragPointerType = "mouse";
-
-  pulseViewport.addEventListener("pointerdown", (event) => {
-    if (event.pointerType === "mouse" && event.button !== 0) {
-      return;
-    }
-
-    dragPointerId = event.pointerId;
-    dragStartX = event.clientX;
-    dragStartY = event.clientY;
-    dragStartLeft = pulseViewport.scrollLeft;
-    isDragging = false;
-    isPressed = true;
-    dragPointerType = event.pointerType;
-
-    if (event.pointerType === "mouse") {
-      pulseViewport.classList.add("is-pressed");
-    }
-  });
-
-  const handlePointerMove = (event) => {
-    if (!isPressed || event.pointerId !== dragPointerId) {
-      return;
-    }
-
-    const deltaX = event.clientX - dragStartX;
-    const deltaY = event.clientY - dragStartY;
-
-    if (dragPointerType !== "mouse") {
-      if (!isDragging && Math.abs(deltaX) > 10 && Math.abs(deltaX) > Math.abs(deltaY)) {
-        isDragging = true;
-      }
-
-      return;
-    }
-
-    if (!isDragging && Math.abs(deltaX) < 6) {
-      return;
-    }
-
-    isDragging = true;
-    pulseViewport.classList.add("is-dragging");
-    pulseViewport.scrollLeft = dragStartLeft - deltaX;
-
-    if (event.cancelable) {
-      event.preventDefault();
-    }
-  };
-
-  const stopDrag = (event) => {
-    if (!isPressed || event.pointerId !== dragPointerId) {
-      return;
-    }
-
-    const draggedInThisTurn = isDragging;
-    dragPointerId = null;
-    isDragging = false;
-    isPressed = false;
-    dragPointerType = "mouse";
-    pulseViewport.classList.remove("is-pressed", "is-dragging");
-
-    if (draggedInThisTurn) {
-      pulseViewport.dataset.dragLock = "true";
-      window.setTimeout(() => {
-        delete pulseViewport.dataset.dragLock;
-      }, 120);
-    }
-  };
-
-  window.addEventListener("pointermove", handlePointerMove, {
-    passive: false,
-  });
-  window.addEventListener("pointerup", stopDrag);
-  window.addEventListener("pointercancel", stopDrag);
-
-  pulseViewport.addEventListener("click", (event) => {
-    if (pulseViewport.dataset.dragLock === "true") {
-      event.preventDefault();
-      event.stopPropagation();
-    }
-  }, true);
-
-  pulseViewport.addEventListener("keydown", (event) => {
-    if (event.key === "ArrowRight") {
-      event.preventDefault();
-      scrollRail(1);
-    }
-
-    if (event.key === "ArrowLeft") {
-      event.preventDefault();
-      scrollRail(-1);
-    }
-
-    if (event.key === "Home") {
-      event.preventDefault();
-      pulseViewport.scrollTo({
-        left: 0,
-        behavior: prefersReducedMotion ? "auto" : "smooth",
-      });
-    }
-
-    if (event.key === "End") {
-      event.preventDefault();
-      pulseViewport.scrollTo({
-        left: pulseViewport.scrollWidth,
-        behavior: prefersReducedMotion ? "auto" : "smooth",
-      });
-    }
-  });
-
-  pulseViewport.addEventListener("scroll", syncControls, {
-    passive: true,
-  });
-  window.addEventListener("resize", syncControls, {
-    passive: true,
-  });
-
-  syncControls();
-}
-
 function renderAgenda() {
   agendaList.innerHTML = agenda
     .map(
@@ -843,458 +661,799 @@ function renderAgenda() {
     .join("");
 }
 
-function renderMenu() {
-  const rootPanel = `
-    <section class="menu-level menu-level--root" data-panel="root">
-      <div class="menu-level__header">
-        <p class="eyebrow">Navigation</p>
-        <h3>Schnell rein, klar weiter.</h3>
-        <p>Die erste Menue-Ebene oeffnet von rechts. Danach kannst du die Liste ziehen oder nach unten wischen, waehrend die letzte Karte im Randbereich verschwindet.</p>
-      </div>
-      <div class="menu-wheel-group" data-menu-wheel-group>
-        <div class="menu-wheel-viewport">
-          <ul class="menu-list menu-wheel-list">
-            ${menuSections
-              .map(
-                (section) => `
-                  <li>
-                    <button class="menu-entry menu-wheel-item" type="button" data-open-panel="${section.id}" data-menu-item>
-                      <span class="menu-entry__label">
-                        <strong>${section.title}</strong>
-                        <span>${section.description}</span>
-                      </span>
-                      <span class="menu-entry__arrow" aria-hidden="true">&rarr;</span>
-                    </button>
-                  </li>
-                `,
-              )
-              .join("")}
-          </ul>
-        </div>
-        <div class="menu-wheel" role="group" aria-label="Menueposition"></div>
-      </div>
-    </section>
-  `;
+function setupCardSpotlights() {
+  if (prefersReducedMotion || !window.matchMedia("(hover: hover)").matches)
+    return;
+  document
+    .querySelectorAll(".pulse-card, .theme-card, .news-card")
+    .forEach((card) => {
+      let frame = 0;
+      card.addEventListener("pointermove", (event) => {
+        if (event.pointerType === "touch") return;
+        cancelAnimationFrame(frame);
+        frame = requestAnimationFrame(() => {
+          const rect = card.getBoundingClientRect();
+          card.style.setProperty(
+            "--spotlight-x",
+            String(event.clientX - rect.left) + "px",
+          );
+          card.style.setProperty(
+            "--spotlight-y",
+            String(event.clientY - rect.top) + "px",
+          );
+        });
+      });
+      card.addEventListener("pointerleave", () => {
+        cancelAnimationFrame(frame);
+        card.style.removeProperty("--spotlight-x");
+        card.style.removeProperty("--spotlight-y");
+      });
+    });
+}
 
-  const detailPanels = menuSections
+function setupDragScroll(container, axis, onRelease) {
+  const horizontal = axis === "x";
+  const property = horizontal ? "scrollLeft" : "scrollTop";
+  let pressed = false;
+  let dragging = false;
+  let pointerId = null;
+  let start = 0;
+  let crossStart = 0;
+  let startScroll = 0;
+  let suppressClick = false;
+
+  container.addEventListener("pointerdown", (event) => {
+    if (
+      event.pointerType !== "mouse" ||
+      event.button !== 0 ||
+      event.ctrlKey ||
+      event.metaKey
+    )
+      return;
+    if (
+      horizontal
+        ? container.scrollWidth <= container.clientWidth + 1
+        : container.scrollHeight <= container.clientHeight + 1
+    )
+      return;
+    suppressClick = false;
+    pressed = true;
+    dragging = false;
+    pointerId = event.pointerId;
+    start = horizontal ? event.clientX : event.clientY;
+    crossStart = horizontal ? event.clientY : event.clientX;
+    startScroll = container[property];
+  });
+  container.addEventListener("dragstart", (event) => {
+    if (pressed) event.preventDefault();
+  });
+  window.addEventListener(
+    "pointermove",
+    (event) => {
+      if (!pressed || event.pointerId !== pointerId) return;
+      const delta = (horizontal ? event.clientX : event.clientY) - start;
+      const cross = (horizontal ? event.clientY : event.clientX) - crossStart;
+      if (!dragging && Math.abs(delta) < 7) return;
+      if (!dragging && Math.abs(cross) > Math.abs(delta)) {
+        pressed = false;
+        return;
+      }
+      if (!dragging) {
+        dragging = true;
+        container.classList.add("is-dragging");
+        container.setPointerCapture(event.pointerId);
+        window.getSelection()?.removeAllRanges();
+      }
+      event.preventDefault();
+      container[property] = startScroll - delta;
+    },
+    { passive: false },
+  );
+
+  const stop = (event) => {
+    if (
+      !pressed ||
+      (event.pointerId !== undefined && event.pointerId !== pointerId)
+    )
+      return;
+    pressed = false;
+    if (container.hasPointerCapture(pointerId))
+      container.releasePointerCapture(pointerId);
+    if (dragging) {
+      suppressClick = true;
+      container.classList.remove("is-dragging");
+      onRelease?.();
+    }
+    dragging = false;
+    pointerId = null;
+  };
+  window.addEventListener("pointerup", stop);
+  window.addEventListener("pointercancel", stop);
+  window.addEventListener("blur", stop);
+  container.addEventListener(
+    "click",
+    (event) => {
+      if (suppressClick && event.detail !== 0) {
+        event.preventDefault();
+        event.stopPropagation();
+        suppressClick = false;
+      }
+    },
+    true,
+  );
+}
+
+function setupPulseRail() {
+  if (!pulseViewport || !pulseGrid) return;
+  const cards = [...pulseGrid.querySelectorAll(".pulse-card")];
+  const counter = document.querySelector("[data-pulse-counter]");
+  let wheelTimer;
+  let frame = 0;
+  const maxLeft = () =>
+    Math.max(0, pulseViewport.scrollWidth - pulseViewport.clientWidth);
+  const positions = () => {
+    const bounds = pulseViewport.getBoundingClientRect();
+    return cards.map((card) =>
+      Math.max(
+        0,
+        Math.min(
+          maxLeft(),
+          card.getBoundingClientRect().left -
+            bounds.left +
+            pulseViewport.scrollLeft,
+        ),
+      ),
+    );
+  };
+  const closestIndex = () =>
+    positions().reduce(
+      (best, position, index, all) =>
+        Math.abs(position - pulseViewport.scrollLeft) <
+        Math.abs(all[best] - pulseViewport.scrollLeft)
+          ? index
+          : best,
+      0,
+    );
+  const goTo = (index) => {
+    const target = Math.max(0, Math.min(index, cards.length - 1));
+    pulseViewport.scrollTo({
+      left: positions()[target],
+      behavior: prefersReducedMotion ? "instant" : "smooth",
+    });
+  };
+  const sync = () => {
+    const atStart = pulseViewport.scrollLeft <= 2;
+    const atEnd = pulseViewport.scrollLeft >= maxLeft() - 2;
+    pulsePrevButton.disabled = atStart;
+    pulseNextButton.disabled = atEnd;
+    if (counter)
+      counter.textContent =
+        String(closestIndex() + 1).padStart(2, "0") +
+        " / " +
+        String(cards.length).padStart(2, "0");
+  };
+  pulsePrevButton.addEventListener("click", () => goTo(closestIndex() - 1));
+  pulseNextButton.addEventListener("click", () => goTo(closestIndex() + 1));
+  pulseViewport.addEventListener(
+    "wheel",
+    (event) => {
+      if (
+        event.ctrlKey ||
+        Math.abs(event.deltaX) > Math.abs(event.deltaY) ||
+        !event.deltaY
+      )
+        return;
+      const delta =
+        event.deltaY *
+        (event.deltaMode === 1
+          ? 20
+          : event.deltaMode === 2
+            ? pulseViewport.clientWidth
+            : 1);
+      if (
+        (delta < 0 && pulseViewport.scrollLeft <= 1) ||
+        (delta > 0 && pulseViewport.scrollLeft >= maxLeft() - 1)
+      )
+        return;
+      event.preventDefault();
+      pulseViewport.classList.add("is-wheeling");
+      pulseViewport.scrollLeft += delta * (Math.abs(delta) > 40 ? 2 : 1);
+      clearTimeout(wheelTimer);
+      wheelTimer = setTimeout(() => {
+        const index = closestIndex();
+        pulseViewport.classList.remove("is-wheeling");
+        goTo(index);
+      }, 160);
+    },
+    { passive: false },
+  );
+  pulseViewport.addEventListener("keydown", (event) => {
+    if (event.altKey || event.ctrlKey || event.metaKey) return;
+    const activeCard = event.target.closest(".pulse-card");
+    const current = activeCard ? cards.indexOf(activeCard) : closestIndex();
+    let next;
+    if (event.key === "ArrowRight") next = current + 1;
+    if (event.key === "ArrowLeft") next = current - 1;
+    if (event.key === "Home") next = 0;
+    if (event.key === "End") next = cards.length - 1;
+    if (next === undefined) return;
+    event.preventDefault();
+    const target = Math.max(0, Math.min(next, cards.length - 1));
+    if (activeCard) cards[target].focus({ preventScroll: true });
+    goTo(target);
+  });
+  pulseViewport.addEventListener(
+    "scroll",
+    () => {
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(sync);
+    },
+    { passive: true },
+  );
+  setupDragScroll(pulseViewport, "x", () => goTo(closestIndex()));
+  new ResizeObserver(sync).observe(pulseViewport);
+  sync();
+}
+
+function renderMenu() {
+  const root =
+    '<section class="menu-level menu-level--root" data-panel="root" aria-label="Alle Themen">' +
+    '<div class="menu-level__header"><h3>Entdecke deine Stadt</h3><span class="menu-level__count">06 Themenwelten</span></div>' +
+    '<div class="menu-wheel-group" data-menu-wheel-group><div class="menu-wheel-viewport"><ul class="menu-list menu-wheel-list">' +
+    menuSections
+      .map(
+        (section) =>
+          '<li><button class="menu-entry menu-wheel-item" type="button" data-open-panel="' +
+          section.id +
+          '" data-menu-item aria-expanded="false" aria-controls="menu-panel-' +
+          section.id +
+          '">' +
+          '<span class="menu-entry__label"><strong>' +
+          section.title +
+          "</strong><span>" +
+          section.description +
+          '</span></span><span class="menu-entry__arrow" aria-hidden="true">&rarr;</span></button></li>',
+      )
+      .join("") +
+    '</ul></div><div class="menu-wheel" role="group" aria-label="Thema ausw\u00e4hlen"></div></div></section>';
+  const details = menuSections
     .map(
-      (section) => `
-        <section class="menu-level" data-panel="${section.id}">
-          <button class="menu-back" type="button" data-back-panel="root">
-            <span aria-hidden="true">&larr;</span>
-            <span>Zurueck</span>
-          </button>
-          <div class="menu-level__header">
-            <p class="eyebrow">Themenwelt</p>
-            <h3>${section.title}</h3>
-            <p>${section.description}</p>
-          </div>
-          <div class="menu-wheel-group menu-wheel-group--detail" data-menu-wheel-group>
-            <div class="menu-wheel-viewport">
-              <ul class="menu-sublist menu-wheel-list">
-                ${section.items
-                  .map(
-                    (item) => `
-                      <li>
-                        <a class="menu-wheel-item" href="${item.href}" ${EXTERNAL_ATTRS} data-menu-item>
-                          <strong>${item.title}</strong>
-                          <span>${item.text}</span>
-                        </a>
-                      </li>
-                    `,
-                  )
-                  .join("")}
-              </ul>
-            </div>
-            <div class="menu-wheel" role="group" aria-label="Menueposition"></div>
-          </div>
-        </section>
-      `,
+      (section) =>
+        '<section class="menu-level" id="menu-panel-' +
+        section.id +
+        '" data-panel="' +
+        section.id +
+        '" aria-label="' +
+        section.title +
+        '" hidden inert>' +
+        '<button class="menu-back" type="button" data-back-panel="root"><span aria-hidden="true">&larr;</span> Alle Themen</button>' +
+        '<div class="menu-level__header"><p class="eyebrow">Deine Themenwelt</p><h3>' +
+        section.title +
+        "</h3><p>" +
+        section.description +
+        "</p></div>" +
+        '<div class="menu-wheel-group" data-menu-wheel-group><div class="menu-wheel-viewport"><ul class="menu-sublist menu-wheel-list">' +
+        section.items
+          .map(
+            (item) =>
+              '<li><a class="menu-wheel-item" href="' +
+              item.href +
+              '" ' +
+              EXTERNAL_ATTRS +
+              " data-menu-item><strong>" +
+              item.title +
+              "</strong><span>" +
+              item.text +
+              "</span></a></li>",
+          )
+          .join("") +
+        '</ul></div><div class="menu-wheel" role="group" aria-label="Dienstleistung ausw\u00e4hlen"></div></div></section>',
     )
     .join("");
-
-  menuTrack.innerHTML = rootPanel + detailPanels;
+  menuTrack.innerHTML = root + details;
 }
 
 function setupMenuFocusWheel() {
   document.querySelectorAll("[data-menu-wheel-group]").forEach((group) => {
     const items = [...group.querySelectorAll("[data-menu-item]")];
+    const list = group.querySelector(".menu-wheel-list");
     const wheel = group.querySelector(".menu-wheel");
-    const scrollContainer = group.querySelector(".menu-wheel-list");
-
-    if (!items.length || !wheel || !scrollContainer) {
-      return;
-    }
-
+    let active = -1;
+    let frame = 0;
     wheel.innerHTML = items
       .map(
-        (_, index) => `
-          <button
-            class="menu-wheel__dot"
-            type="button"
-            aria-label="Menueintrag ${index + 1} fokussieren"
-            data-wheel-index="${index}"
-          ></button>
-        `,
+        (item, index) =>
+          '<button class="menu-wheel__dot" type="button" aria-label="' +
+          item.querySelector("strong").textContent +
+          ' fokussieren" data-wheel-index="' +
+          index +
+          '"></button>',
       )
       .join("");
-
-    const dots = [...wheel.querySelectorAll(".menu-wheel__dot")];
-    let activeIndex = 0;
-
-    const setStateClass = (element, distance) => {
-      element.classList.remove("is-active", "is-near", "is-mid", "is-far");
-
-      if (distance === 0) {
-        element.classList.add("is-active");
-      } else if (distance === 1) {
-        element.classList.add("is-near");
-      } else if (distance === 2) {
-        element.classList.add("is-mid");
-      } else {
-        element.classList.add("is-far");
-      }
-    };
-
-    const applyState = (nextIndex) => {
-      activeIndex = Math.max(0, Math.min(nextIndex, items.length - 1));
-
-      items.forEach((item, index) => {
-        const distance = Math.abs(index - activeIndex);
-        setStateClass(item, distance);
-      });
-
-      dots.forEach((dot, index) => {
-        const distance = Math.abs(index - activeIndex);
-        setStateClass(dot, distance);
+    const dots = [...wheel.children];
+    const applyState = (next) => {
+      const index = Math.max(0, Math.min(next, items.length - 1));
+      if (index === active) return;
+      active = index;
+      items.forEach((item, i) => {
+        const distance = Math.abs(i - active);
+        ["is-active", "is-near", "is-mid", "is-far"].forEach((name) =>
+          item.classList.remove(name),
+        );
+        item.classList.add(
+          distance === 0
+            ? "is-active"
+            : distance === 1
+              ? "is-near"
+              : distance === 2
+                ? "is-mid"
+                : "is-far",
+        );
+        dots[i].classList.toggle("is-active", i === active);
+        dots[i].classList.toggle("is-near", distance === 1);
+        if (i === active) dots[i].setAttribute("aria-current", "true");
+        else dots[i].removeAttribute("aria-current");
       });
     };
-
     const syncFromScroll = () => {
-      const bounds = scrollContainer.getBoundingClientRect();
-      const focusY = bounds.top + bounds.height / 2;
-
-      let bestIndex = activeIndex;
-      let bestDistance = Number.POSITIVE_INFINITY;
-
-      items.forEach((item, index) => {
-        const rect = item.getBoundingClientRect();
-        const itemCenter = rect.top + rect.height / 2;
-        const distance = Math.abs(itemCenter - focusY);
-
-        if (distance < bestDistance) {
-          bestDistance = distance;
-          bestIndex = index;
-        }
-      });
-
-      applyState(bestIndex);
+      if (
+        !list.clientHeight ||
+        group.closest("[inert]") ||
+        menuPanel.classList.contains("is-reflow")
+      )
+        return;
+      const top = list.getBoundingClientRect().top + 8;
+      const closest = items.reduce(
+        (best, item, i) =>
+          Math.abs(item.getBoundingClientRect().top - top) <
+          Math.abs(items[best].getBoundingClientRect().top - top)
+            ? i
+            : best,
+        0,
+      );
+      applyState(closest);
     };
-
-    const focusItem = (index, shouldScroll = true) => {
+    const focusItem = (next, focus = true, smooth = true) => {
+      const index = Math.max(0, Math.min(next, items.length - 1));
       const item = items[index];
-
-      if (!item) {
-        return;
-      }
-
       applyState(index);
-
-      if (shouldScroll) {
-        item.scrollIntoView({
-          behavior: prefersReducedMotion ? "auto" : "smooth",
-          block: "center",
-          inline: "nearest",
-        });
+      if (menuPanel.classList.contains("is-reflow")) {
+        const bounds = menuPanel.getBoundingClientRect();
+        const rect = item.getBoundingClientRect();
+        const top =
+          bounds.top +
+          menuPanel.querySelector(".menu-panel__top").offsetHeight +
+          20;
+        if (rect.top < top || rect.bottom > bounds.bottom - 16) {
+          menuPanel.scrollTo({
+            top: menuPanel.scrollTop + rect.top - top,
+            behavior: "instant",
+          });
+        }
+        if (focus) item.focus({ preventScroll: true });
+        return;
       }
-
-      item.focus({
-        preventScroll: true,
+      list.scrollTo({
+        top:
+          list.scrollTop +
+          item.getBoundingClientRect().top -
+          list.getBoundingClientRect().top -
+          8,
+        behavior: smooth && !prefersReducedMotion ? "smooth" : "instant",
       });
+      if (focus) item.focus({ preventScroll: true });
     };
-
-    items.forEach((item, index) => {
-      item.addEventListener("focus", () => applyState(index));
-      item.addEventListener("mouseenter", () => applyState(index));
-      item.addEventListener("pointerdown", () => applyState(index));
-    });
-
-    dots.forEach((dot, index) => {
-      dot.addEventListener("click", () => focusItem(index));
-    });
-
-    let dragPointerId = null;
-    let dragStartY = 0;
-    let dragStartTop = 0;
-    let hasDragged = false;
-    let isPointerPressed = false;
-
-    scrollContainer.addEventListener("pointerdown", (event) => {
-      if (event.pointerType !== "mouse" || event.button !== 0) {
-        return;
-      }
-
-      dragPointerId = event.pointerId;
-      dragStartY = event.clientY;
-      dragStartTop = scrollContainer.scrollTop;
-      hasDragged = false;
-      isPointerPressed = true;
-      scrollContainer.classList.add("is-pressed");
-    });
-
-    const handlePointerMove = (event) => {
-      if (!isPointerPressed || event.pointerId !== dragPointerId) {
-        return;
-      }
-
-      const deltaY = event.clientY - dragStartY;
-
-      if (!hasDragged && Math.abs(deltaY) < 6) {
-        return;
-      }
-
-      if (!hasDragged) {
-        hasDragged = true;
-        scrollContainer.setPointerCapture?.(event.pointerId);
-      }
-
-      scrollContainer.classList.add("is-dragging");
-      scrollContainer.scrollTop = dragStartTop - deltaY;
-
-      if (event.cancelable) {
-        event.preventDefault();
-      }
+    const refresh = () => {
+      if (!list.clientHeight) return;
+      list.style.setProperty(
+        "--wheel-tail",
+        Math.max(8, list.clientHeight - items.at(-1).offsetHeight - 8) + "px",
+      );
     };
-
-    const stopDrag = (event) => {
-      if (!isPointerPressed || event.pointerId !== dragPointerId) {
-        return;
-      }
-
-      const draggedInThisTurn = hasDragged;
-      dragPointerId = null;
-      hasDragged = false;
-      isPointerPressed = false;
-      scrollContainer.classList.remove("is-pressed", "is-dragging");
-      if (scrollContainer.hasPointerCapture?.(event.pointerId)) {
-        scrollContainer.releasePointerCapture(event.pointerId);
-      }
-
-      if (draggedInThisTurn) {
-        scrollContainer.dataset.dragLock = "true";
-        window.setTimeout(() => {
-          delete scrollContainer.dataset.dragLock;
-        }, 0);
-      }
-
-      window.requestAnimationFrame(syncFromScroll);
-    };
-
-    window.addEventListener("pointermove", handlePointerMove, {
-      passive: false,
-    });
-    window.addEventListener("pointerup", stopDrag);
-    window.addEventListener("pointercancel", stopDrag);
-
-    scrollContainer.addEventListener("click", (event) => {
-      if (scrollContainer.dataset.dragLock === "true") {
-        event.preventDefault();
-        event.stopPropagation();
-      }
-    }, true);
-
+    items.forEach((item, index) =>
+      item.addEventListener("focus", () => {
+        const rect = item.getBoundingClientRect();
+        const bounds = list.getBoundingClientRect();
+        applyState(index);
+        if (rect.top < bounds.top + 4 || rect.bottom > bounds.bottom - 8)
+          focusItem(index, false);
+      }),
+    );
+    dots.forEach((dot, i) => dot.addEventListener("click", () => focusItem(i)));
     group.addEventListener("keydown", (event) => {
-      const currentIndex = items.indexOf(event.target.closest("[data-menu-item]"));
-
-      if (currentIndex === -1) {
-        return;
-      }
-
-      if (event.key === "ArrowDown") {
-        event.preventDefault();
-        focusItem(currentIndex + 1);
-      }
-
-      if (event.key === "ArrowUp") {
-        event.preventDefault();
-        focusItem(currentIndex - 1);
-      }
+      const item = event.target.closest("[data-menu-item]");
+      if (!item) return;
+      const index = items.indexOf(item);
+      let next;
+      if (event.key === "ArrowDown") next = index + 1;
+      if (event.key === "ArrowUp") next = index - 1;
+      if (event.key === "Home") next = 0;
+      if (event.key === "End") next = items.length - 1;
+      if (next === undefined) return;
+      event.preventDefault();
+      focusItem(next);
     });
-
-    scrollContainer.addEventListener("scroll", syncFromScroll, {
-      passive: true,
+    list.addEventListener(
+      "scroll",
+      () => {
+        cancelAnimationFrame(frame);
+        frame = requestAnimationFrame(syncFromScroll);
+      },
+      { passive: true },
+    );
+    setupDragScroll(list, "y", () => {
+      syncFromScroll();
+      focusItem(active, false);
     });
-
-    group.addEventListener("wheel", () => {
-      window.requestAnimationFrame(syncFromScroll);
-    }, {
-      passive: true,
-    });
-
-    group.menuFocusWheel = {
-      applyState,
-      syncFromScroll,
-    };
-
+    new ResizeObserver(refresh).observe(list);
+    group.menuFocusWheel = { applyState, syncFromScroll, focusItem, refresh };
     applyState(0);
-    window.requestAnimationFrame(syncFromScroll);
   });
 }
 
+function normalizeSearch(value) {
+  return value
+    .toLocaleLowerCase("de")
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/ae/g, "a")
+    .replace(/oe/g, "o")
+    .replace(/ue/g, "u")
+    .replace(/\u00df/g, "ss");
+}
+
 function setupMenu() {
-  const panelIds = ["root", ...menuSections.map((section) => section.id)];
-  const panelIndex = Object.fromEntries(panelIds.map((id, index) => [id, index]));
-  let previousActiveElement = null;
-  const resetMenuLists = () => {
-    menuTrack.querySelectorAll(".menu-wheel-list").forEach((list) => {
-      list.scrollTop = 0;
-    });
-  };
-
-  const getFocusableElements = () =>
-    [...menuOverlay.querySelectorAll('button:not([disabled]), a[href], [tabindex]:not([tabindex="-1"])')].filter(
-      (element) => !element.closest("[inert]"),
+  const search = document.querySelector("#menu-search");
+  const contrastButton = document.querySelector(".menu-contrast");
+  const stage = document.querySelector(".menu-stage");
+  const results = document.querySelector("#menu-search-results");
+  const resultList = document.querySelector("#menu-results");
+  const status = document.querySelector("#menu-search-status");
+  const panels = [...menuTrack.querySelectorAll("[data-panel]")];
+  const background = [
+    ...document.querySelectorAll(
+      "body > header, body > main, body > footer, body > .skip-link",
+    ),
+  ];
+  const inertState = new Map();
+  let previousFocus;
+  let returnPanel = "root";
+  let lastSection = null;
+  const refreshLayout = () => {
+    menuPanel.classList.toggle(
+      "is-reflow",
+      Number.parseFloat(getComputedStyle(document.documentElement).fontSize) >
+        20,
     );
-
-  const setPanel = (panelId, options = {}) => {
-    const { focusFirstItem = false } = options;
-    const index = panelIndex[panelId] ?? 0;
-    menuTrack.style.transform = `translateX(-${index * 100}%)`;
-    menuTrack.dataset.panel = panelId;
-    menuTrack.querySelectorAll("[data-panel]").forEach((panel) => {
-      const isActive = panel.dataset.panel === panelId;
-      panel.setAttribute("aria-hidden", String(!isActive));
-      panel.toggleAttribute("inert", !isActive);
-    });
-
-    window.requestAnimationFrame(() => {
-      const activePanel = menuTrack.querySelector(`[data-panel="${panelId}"]`);
-      const focusGroup = activePanel?.querySelector("[data-menu-wheel-group]");
-      focusGroup?.menuFocusWheel?.syncFromScroll();
-
-      if (focusFirstItem) {
-        const firstItem = activePanel?.querySelector("[data-menu-item]");
-        focusGroup?.menuFocusWheel?.applyState(0);
-        firstItem?.focus({
-          preventScroll: true,
-        });
+  };
+  const layoutObserver = new ResizeObserver(refreshLayout);
+  layoutObserver.observe(menuPanel);
+  layoutObserver.observe(menuPanel.querySelector(".menu-panel__top"));
+  refreshLayout();
+  const applyContrast = (enabled) => {
+    menuOverlay.classList.toggle("is-readable", enabled);
+    contrastButton.setAttribute("aria-pressed", String(enabled));
+  };
+  let readable = window.matchMedia("(prefers-contrast: more)").matches;
+  try {
+    readable =
+      readable || localStorage.getItem("gladbeck-menu-contrast") === "true";
+  } catch {
+    /* Device preferences also work when storage is unavailable. */
+  }
+  applyContrast(readable);
+  contrastButton.addEventListener("click", () => {
+    readable = !readable;
+    applyContrast(readable);
+    try {
+      localStorage.setItem("gladbeck-menu-contrast", String(readable));
+    } catch {
+      /* Keep the preference for this page view. */
+    }
+  });
+  const aliases = {
+    Serviceportal:
+      "Antrag Pass Personalausweis Reisepass Ummelden Meldebescheinigung Gewerbe",
+    "Online-Termine": "Termin buchen B\u00fcrgeramt Ausl\u00e4nderamt",
+    Rufnummern: "Telefon Kontakt Ansprechperson",
+    "Arbeiten bei der Stadt": "Stellen Ausbildung Karriere Jobs",
+    Schule: "Schulen Bildung Kinder",
+    Senioren: "Seniorinnen Alter Pflege",
+  };
+  const entries = new Map();
+  [
+    ...quicklinks.map((item) => ({ ...item, category: "Service" })),
+    ...menuSections.flatMap((section) => [
+      {
+        title: section.title,
+        text: section.description,
+        href: themes.find((theme) => theme.id === section.id).href,
+        category: "Themenwelt",
+      },
+      ...section.items.map((item) => ({ ...item, category: section.title })),
+    ]),
+  ].forEach((entry) => {
+    const existing = entries.get(entry.href);
+    if (existing)
+      existing.keywords +=
+        " " +
+        entry.title +
+        " " +
+        entry.text +
+        " " +
+        (aliases[entry.title] || "");
+    else
+      entries.set(entry.href, {
+        ...entry,
+        keywords:
+          entry.title +
+          " " +
+          entry.text +
+          " " +
+          entry.category +
+          " " +
+          (aliases[entry.title] || ""),
+      });
+  });
+  const isOpen = () => menuOverlay.classList.contains("is-open");
+  const getActiveGroup = () =>
+    menuTrack.querySelector(
+      ':scope > [data-panel="' + returnPanel + '"] [data-menu-wheel-group]',
+    );
+  const setPanel = (requested, focus = true) => {
+    const id = panels.some((panel) => panel.dataset.panel === requested)
+      ? requested
+      : "root";
+    returnPanel = id;
+    panels.forEach((panel) => {
+      const active = panel.dataset.panel === id;
+      if (panel.dataset.panel !== "root") {
+        if (id !== "root") panel.hidden = !active;
       }
+      panel.inert = !active;
+      panel.setAttribute("aria-hidden", String(!active));
+    });
+    menuTrack
+      .querySelectorAll("[data-open-panel]")
+      .forEach((button) =>
+        button.setAttribute(
+          "aria-expanded",
+          String(button.dataset.openPanel === id),
+        ),
+      );
+    menuTrack.dataset.currentPanel = id;
+    menuTrack.style.transform =
+      id === "root" ? "translateX(0)" : "translateX(-100%)";
+    requestAnimationFrame(() => {
+      if (returnPanel !== id) return;
+      const group = getActiveGroup();
+      group.menuFocusWheel.refresh();
+      const index =
+        id === "root" && lastSection
+          ? menuSections.findIndex((section) => section.id === lastSection)
+          : 0;
+      group.menuFocusWheel.focusItem(Math.max(0, index), false, false);
+      if (!focus) return;
+
+      const focusPanel = () => {
+        if (
+          isOpen() &&
+          returnPanel === id &&
+          !stage.hidden &&
+          document.activeElement !== search
+        ) {
+          group.menuFocusWheel.focusItem(Math.max(0, index), true, false);
+        }
+      };
+      const animations = [
+        ...menuPanel.getAnimations(),
+        ...menuTrack.getAnimations(),
+      ];
+      if (animations.length) {
+        Promise.allSettled(
+          animations.map((animation) => animation.finished),
+        ).then(focusPanel);
+      } else focusPanel();
     });
   };
-
-  const openMenu = () => {
-    previousActiveElement = document.activeElement;
-    resetMenuLists();
-    menuOverlay.classList.add("is-open");
-    menuOverlay.setAttribute("aria-hidden", "false");
-    menuToggle.setAttribute("aria-expanded", "true");
-    document.body.classList.add("menu-open");
-    setPanel("root", {
-      focusFirstItem: true,
-    });
+  const clearSearch = () => {
+    search.value = "";
+    stage.hidden = false;
+    stage.inert = false;
+    results.hidden = true;
+    resultList.replaceChildren();
+    status.textContent = "";
+    getActiveGroup()?.menuFocusWheel.refresh();
   };
-
-  const closeMenu = () => {
+  const openMenu = (focusSearch = false) => {
+    if (!isOpen()) {
+      refreshLayout();
+      previousFocus = document.activeElement;
+      menuOverlay.inert = false;
+      menuOverlay.setAttribute("aria-hidden", "false");
+      menuOverlay.classList.add("is-open");
+      menuToggle.setAttribute("aria-expanded", "true");
+      document.body.classList.add("menu-open");
+      background.forEach((element) => {
+        inertState.set(element, element.inert);
+        element.inert = true;
+      });
+      lastSection = null;
+      clearSearch();
+      setPanel("root", !focusSearch);
+    }
+    if (focusSearch) search.focus({ preventScroll: true });
+  };
+  const closeMenu = (anchor) => {
+    background.forEach((element) => {
+      element.inert = inertState.get(element) ?? false;
+    });
+    document.body.classList.remove("menu-open");
+    menuToggle.setAttribute("aria-expanded", "false");
+    const hash = anchor?.getAttribute("href");
+    const destination = hash?.startsWith("#")
+      ? document.getElementById(hash.slice(1))
+      : null;
+    if (destination) {
+      const heading = destination.querySelector("h1, h2") || destination;
+      if (!heading.hasAttribute("tabindex")) {
+        heading.setAttribute("tabindex", "-1");
+        heading.addEventListener(
+          "blur",
+          () => heading.removeAttribute("tabindex"),
+          { once: true },
+        );
+      }
+      heading.focus({ preventScroll: true });
+      history.pushState(null, "", hash);
+      destination.scrollIntoView({
+        behavior: prefersReducedMotion ? "instant" : "smooth",
+        block: "start",
+      });
+    } else previousFocus?.focus({ preventScroll: true });
     menuOverlay.classList.remove("is-open");
     menuOverlay.setAttribute("aria-hidden", "true");
-    menuToggle.setAttribute("aria-expanded", "false");
-    document.body.classList.remove("menu-open");
-    setPanel("root");
-    previousActiveElement?.focus?.({
-      preventScroll: true,
-    });
+    menuOverlay.inert = true;
+    clearSearch();
   };
 
-  menuToggle.addEventListener("click", openMenu);
-
+  menuToggle.addEventListener("click", () => openMenu());
   menuOverlay.addEventListener("click", (event) => {
-    if (event.target.closest("[data-menu-close]")) {
-      closeMenu();
-      return;
-    }
-
-    const openTrigger = event.target.closest("[data-open-panel]");
-    if (openTrigger) {
-      setPanel(openTrigger.dataset.openPanel, {
-        focusFirstItem: true,
-      });
-      return;
-    }
-
-    const backTrigger = event.target.closest("[data-back-panel]");
-    if (backTrigger) {
-      setPanel(backTrigger.dataset.backPanel, {
-        focusFirstItem: true,
-      });
-      return;
-    }
-
-    if (event.target.closest(".menu-sublist a")) {
-      closeMenu();
+    const trigger = event.target.closest("[data-open-panel]");
+    if (event.target.closest("[data-menu-close]")) closeMenu();
+    else if (trigger) {
+      lastSection = trigger.dataset.openPanel;
+      setPanel(lastSection);
+    } else if (event.target.closest("[data-back-panel]")) setPanel("root");
+    else {
+      const anchor = event.target.closest("a[href]");
+      if (anchor && !event.defaultPrevented) {
+        if (anchor.getAttribute("href").startsWith("#")) event.preventDefault();
+        closeMenu(anchor);
+      }
     }
   });
-
-  document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape" && menuOverlay.classList.contains("is-open")) {
-      closeMenu();
+  search.addEventListener("input", () => {
+    const query = normalizeSearch(search.value.trim());
+    if (!query) {
+      clearSearch();
+      return;
+    }
+    const terms = query.split(/\s+/);
+    const matches = [...entries.values()].filter((entry) =>
+      terms.every((term) => normalizeSearch(entry.keywords).includes(term)),
+    );
+    stage.hidden = true;
+    stage.inert = true;
+    results.hidden = false;
+    resultList.replaceChildren();
+    matches.forEach((entry) => {
+      const li = document.createElement("li");
+      const link = document.createElement("a");
+      const title = document.createElement("strong");
+      const description = document.createElement("span");
+      link.href = entry.href;
+      title.textContent = entry.title;
+      description.textContent = entry.category + " \u00b7 " + entry.text;
+      link.append(title, description);
+      li.append(link);
+      resultList.append(li);
+    });
+    if (!matches.length) {
+      const empty = document.createElement("li");
+      empty.className = "menu-empty";
+      empty.textContent =
+        "Kein Treffer. Versuche zum Beispiel \u201eTermin\u201c, \u201eSchule\u201c oder \u201eKontakt\u201c.";
+      resultList.append(empty);
+    }
+    status.textContent =
+      matches.length +
+      (matches.length === 1 ? " Ergebnis" : " Ergebnisse") +
+      " gefunden.";
+  });
+  search.addEventListener("keydown", (event) => {
+    if (event.key === "ArrowDown" && !results.hidden) {
+      event.preventDefault();
+      resultList.querySelector("a")?.focus();
     }
   });
-
   menuPanel.addEventListener("keydown", (event) => {
-    if (event.key !== "Tab" || !menuOverlay.classList.contains("is-open")) {
+    if (!isOpen()) return;
+    if (event.key === "Escape") {
+      event.preventDefault();
+      if (search.value) {
+        clearSearch();
+        search.focus({ preventScroll: true });
+      } else closeMenu();
       return;
     }
-
-    const focusable = getFocusableElements();
-    const firstElement = focusable[0];
-    const lastElement = focusable[focusable.length - 1];
-
-    if (!firstElement || !lastElement) {
+    if (event.key === "/" && !event.target.matches("input, textarea")) {
+      event.preventDefault();
+      search.focus();
       return;
     }
-
-    if (event.shiftKey && document.activeElement === firstElement) {
+    if (
+      event.key === "ArrowLeft" &&
+      returnPanel !== "root" &&
+      event.target.closest(".menu-level")
+    ) {
       event.preventDefault();
-      lastElement.focus();
+      setPanel("root");
+      return;
     }
-
-    if (!event.shiftKey && document.activeElement === lastElement) {
+    if (event.key === "ArrowRight") {
+      const button = event.target.closest("[data-open-panel]");
+      if (button) {
+        event.preventDefault();
+        button.click();
+      }
+    }
+    if (event.key !== "Tab") return;
+    const focusable = [
+      ...menuPanel.querySelectorAll(
+        'a[href], button:not([disabled]), input, [tabindex="0"]',
+      ),
+    ].filter(
+      (element) =>
+        !element.closest("[hidden], [inert]") &&
+        element.getClientRects().length,
+    );
+    const first = focusable[0];
+    const last = focusable.at(-1);
+    if (
+      event.shiftKey &&
+      (document.activeElement === first || document.activeElement === menuPanel)
+    ) {
       event.preventDefault();
-      firstElement.focus();
+      last?.focus();
+    } else if (!event.shiftKey && document.activeElement === last) {
+      event.preventDefault();
+      first?.focus();
     }
   });
-
-  setPanel("root");
-
+  setPanel("root", false);
   const params = new URLSearchParams(window.location.search);
   if (params.get("menu") === "open") {
     openMenu();
-    const requestedPanel = params.get("panel");
-    if (requestedPanel && panelIndex[requestedPanel] !== undefined) {
-      setPanel(requestedPanel, {
-        focusFirstItem: true,
-      });
-    }
+    if (params.has("panel")) setPanel(params.get("panel"));
   }
 }
 
 function setupReveal() {
+  if (prefersReducedMotion || !("IntersectionObserver" in window)) return;
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("is-visible");
-          observer.unobserve(entry.target);
-        }
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
       });
     },
-    {
-      threshold: 0.18,
-      rootMargin: "0px 0px -10% 0px",
-    },
+    { threshold: 0, rootMargin: "0px 0px -25px 0px" },
   );
-
-  document.querySelectorAll(".reveal").forEach((element) => observer.observe(element));
+  document
+    .querySelectorAll(".reveal")
+    .forEach((element) => observer.observe(element));
 }
 
 function init() {
@@ -1316,5 +1475,4 @@ function init() {
   footerYear.textContent = new Date().getFullYear();
   footerContentDate.textContent = CONTENT_STAND;
 }
-
 init();

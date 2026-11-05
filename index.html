@@ -3,10 +3,16 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Stadt Gladbeck | Neu gedacht</title>
+    <meta name="theme-color" content="#f5f1e8" />
+    <title>Gladbeck | Deine Stadt. Dein Alltag.</title>
     <meta
       name="description"
-      content="Modernisierte Konzeptseite fuer die Stadt Gladbeck mit aktuellen Inhalten, offiziellen Schnellzugriffen, redaktionellen Modulen und 9:16-Bildwelten."
+      content="Gladbeck entdecken: digitale Services, Nachrichten, Stadtleben und kurze Wege ins Rathaus. Ein Entwurf f&uuml;r das Stadtportal."
+    />
+    <link
+      rel="icon"
+      href="assets/media/brand/gladbeck-logo.webp"
+      type="image/webp"
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -15,411 +21,526 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="assets/css/styles.css" />
-    <script src="assets/js/main.js" defer></script>
+    <script src="assets/js/main.js" type="module"></script>
   </head>
   <body>
     <a class="skip-link" href="#hauptinhalt">Direkt zum Inhalt</a>
-    <div class="page-orb page-orb--lime" aria-hidden="true"></div>
-    <div class="page-orb page-orb--blue" aria-hidden="true"></div>
-    <div class="page-grid" aria-hidden="true"></div>
-
     <header class="site-header">
-      <a class="brand" href="#start" aria-label="Zur Startsektion">
+      <a class="brand" href="#start" aria-label="Gladbeck, zur Startseite">
         <img
           class="brand__logo"
           src="assets/media/brand/gladbeck-logo.webp"
           alt="Stadt Gladbeck"
+          width="116"
+          height="44"
         />
-        <div class="brand__copy">
-          <span class="brand__eyebrow">Neu gedacht</span>
-          <strong>Stadtportal Gladbeck</strong>
-        </div>
+        <span class="brand__copy"
+          ><span class="brand__eyebrow">Mitten im Ruhrgebiet</span
+          ><strong>Deine Stadt. Dein Alltag.</strong></span
+        >
       </a>
-
-      <div class="site-header__actions">
-        <a class="header-link" href="#quicklinks">Services</a>
-        <a class="header-link" href="#aktuell">Aktuell</a>
-        <a class="header-link" href="#stories">Bildwelten</a>
-        <a class="header-link" href="#barrierefreiheit">Barrierefrei</a>
+      <nav class="site-header__actions" aria-label="Schnellnavigation">
+        <a class="header-link" href="#quicklinks">Service</a>
+        <a class="header-link" href="#aktuell">Aktuelles</a>
+        <a class="header-link" href="#stories">Entdecken</a>
         <button
           class="menu-toggle"
           type="button"
           aria-expanded="false"
           aria-controls="menu-overlay"
+          aria-haspopup="dialog"
         >
-          <span>Menue</span>
-          <span class="menu-toggle__icon" aria-hidden="true">
-            <span></span>
-            <span></span>
-            <span></span>
-          </span>
+          <span>Men&uuml;</span
+          ><span class="menu-toggle__icon" aria-hidden="true"
+            ><span></span><span></span
+          ></span>
         </button>
-      </div>
+      </nav>
     </header>
 
-    <nav class="menu-overlay" id="menu-overlay" aria-hidden="true">
+    <div class="menu-overlay" id="menu-overlay" aria-hidden="true" inert>
       <button
         class="menu-overlay__backdrop"
         type="button"
-        aria-label="Menue schliessen"
+        aria-label="Men&uuml; schlie&szlig;en"
+        tabindex="-1"
         data-menu-close
       ></button>
-
-      <div class="menu-panel" role="dialog" aria-modal="true" aria-labelledby="menu-title">
+      <div
+        class="menu-panel"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="menu-title"
+        tabindex="-1"
+      >
         <div class="menu-panel__top">
           <div>
-            <p class="eyebrow">Einfach navigieren</p>
-            <h2 id="menu-title">Gladbeck Menue</h2>
+            <p class="eyebrow">Dein Weg durch Gladbeck</p>
+            <h2 id="menu-title">Was suchst du?</h2>
           </div>
-
-          <button class="menu-close" type="button" aria-label="Menue schliessen" data-menu-close>
-            <span></span>
-            <span></span>
+          <button
+            class="menu-close"
+            type="button"
+            aria-label="Men&uuml; schlie&szlig;en"
+            data-menu-close
+          >
+            <span></span><span></span>
           </button>
         </div>
-
-        <div class="menu-stage">
-          <div class="menu-track" id="menu-track"></div>
+        <div class="menu-search">
+          <label class="sr-only" for="menu-search"
+            >Services und Themen im Men&uuml; suchen</label
+          >
+          <span class="search-icon" aria-hidden="true"></span>
+          <input
+            id="menu-search"
+            type="search"
+            placeholder="Zum Beispiel Termin, Schule, Kultur"
+            autocomplete="off"
+            aria-controls="menu-search-results"
+          />
+          <button
+            class="menu-contrast"
+            type="button"
+            aria-pressed="false"
+            aria-label="Alle Men&uuml;eintr&auml;ge mit vollem Kontrast anzeigen"
+            title="Voller Textkontrast im Men&uuml;"
+          >
+            Aa
+          </button>
         </div>
-
+        <nav class="menu-stage" aria-label="Themen und Dienstleistungen">
+          <div class="menu-track" id="menu-track"></div>
+        </nav>
+        <div class="menu-search-results" id="menu-search-results" hidden>
+          <h3>Suchergebnisse</h3>
+          <ul class="menu-results" id="menu-results"></ul>
+        </div>
+        <p
+          class="sr-only"
+          id="menu-search-status"
+          role="status"
+          aria-live="polite"
+        ></p>
         <div class="menu-panel__footer">
-          <div class="menu-panel__footer-brand">
-            <img src="assets/media/brand/gladbeck-100.webp" alt="100 Jahre Gladbeck" />
-            <p>Offizielle Inhalte, ein sichtbarer Fokus und lokale Bildwelten direkt im Menue.</p>
+          <div class="menu-shortcuts" role="group" aria-label="Direkt zu">
+            <a href="https://serviceportal.gladbeck.de/"
+              >Serviceportal <span aria-hidden="true">&nearr;</span></a
+            ><a href="#quicklinks"
+              >Schnellzugriffe <span aria-hidden="true">&rarr;</span></a
+            ><a href="#barrierefreiheit"
+              >Zug&auml;nglichkeit <span aria-hidden="true">&rarr;</span></a
+            >
           </div>
-          <div class="menu-panel__gallery" aria-label="Gladbeck Eindruecke">
-            <img src="csm_gladbeck_gladbecker-rundtour_bild01_1deed78dfb.jpg" alt="Wasserschloss Wittringen in Gladbeck" />
-            <img src="3L_12_01_ehrm_01_td.jpg" alt="Steinboegen im Ehrenmal Gladbeck" />
-            <img src="1906_115772_Rathaus_Gladbeck_klein (1).jpg" alt="Historische Ansicht des Rathauses Gladbeck" />
-          </div>
+          <p class="menu-help">
+            Wischen oder ziehen. Mit <kbd>&uarr;</kbd>
+            <kbd>&darr;</kbd> navigieren, mit <kbd>Esc</kbd> schlie&szlig;en.
+          </p>
         </div>
       </div>
-    </nav>
+    </div>
 
     <main id="hauptinhalt" tabindex="-1">
-      <section class="hero reveal" id="start">
+      <section class="hero" id="start" aria-labelledby="hero-title">
         <div class="section-shell hero__layout">
           <div class="hero__copy">
-            <p class="eyebrow">Stadtportal Gladbeck | Inhaltsstand 23. April 2026</p>
-            <h1>
-              Gladbeck.
-              <br />
-              Klarer im Service,
-              <br />
-              staerker im Stadtleben.
+            <p class="eyebrow">
+              <span class="status-dot" aria-hidden="true"></span> Zuhause in
+              Gladbeck
+            </p>
+            <h1 id="hero-title">
+              Deine Stadt.<br />Dein <span>Gladbeck.</span>
             </h1>
             <p class="hero__intro">
-              Diese verfeinerte Konzeptseite uebernimmt aktuelle Themen aus dem offiziellen
-              Gladbeck-Portal und verdichtet sie auf eine modernere Startseite: klare Services,
-              sichtbare Stadt-News, redaktionelle Schwerpunktflaechen und 9:16-Module fuer
-              Kampagnen, Reels und Videoformate.
+              Alles, was deinen Alltag leichter macht. Und alles, was unsere
+              Stadt besonders macht. Entdecke Gladbeck, erledige dein Anliegen
+              und bleib verbunden.
             </p>
-
             <div class="hero__actions">
-              <a class="button button--primary" href="#aktuell">Aktuelles ansehen</a>
-              <a class="button button--ghost" href="#quicklinks">Services oeffnen</a>
-              <a class="button button--ghost" href="#stories">Reels-Bereich ansehen</a>
+              <a class="button button--primary" href="#quicklinks"
+                >Was kann ich erledigen?
+                <span aria-hidden="true">&rarr;</span></a
+              ><a class="hero__text-link" href="#stories"
+                >Gladbeck entdecken <span aria-hidden="true">&searr;</span></a
+              >
             </div>
-
-            <ul class="hero__chips" aria-label="Eigenschaften des Konzepts">
-              <li>Stand 23.04.2026</li>
-              <li>Offizielle Schnellzugriffe</li>
-              <li>Aktuelles + Termine</li>
-              <li>9:16-Reels und Kampagnen</li>
-              <li>Barrierearm umgesetzt</li>
-            </ul>
+            <p class="hero__caption">Kurze Wege. Mehr Stadtleben.</p>
           </div>
-
           <div class="hero__visual">
-            <article class="hero-card hero-card--image">
+            <figure class="hero-card hero-card--image">
               <img
                 class="hero-card__media"
                 src="Gladnbeck_schloss_luftaufnahme_v16_9_1200.jpeg"
-                alt="Luftaufnahme vom Wasserschloss Wittringen in Gladbeck"
-                loading="eager"
+                alt="Das Wasserschloss Wittringen und seine gr&uuml;ne Parklandschaft aus der Luft"
+                width="1200"
+                height="675"
                 fetchpriority="high"
               />
-              <div class="hero-card__overlay">
-                <p class="hero-card__kicker">Headermotiv</p>
-                <h2>Wittringen setzt sofort den richtigen Ton fuer Service, Kultur und Stadtleben.</h2>
-                <ul class="hero-card__list">
-                  <li>Starkes lokales Bild statt generischer Verwaltungsoptik.</li>
-                  <li>Raum fuer Eventteaser, Videos und saisonale Schwerpunkte.</li>
-                  <li>Lesbare Overlays mit hohem Kontrast auch ueber Bildmotiven.</li>
-                </ul>
-              </div>
-            </article>
-
-            <div class="hero__visual-grid">
-              <article class="hero-card hero-card--signal">
-                <span class="hero-card__label">Naechster Termin</span>
-                <strong>Mobilitaets- und Klimatag am Sonntag, 26. April 2026, von 10 bis 15 Uhr am Wasserschloss Wittringen.</strong>
-              </article>
-
-              <article class="hero-card hero-card--rathaus">
-                <img
-                  class="hero-card__media"
-                  src="1906_115772_Rathaus_Gladbeck_klein (1).jpg"
-                  alt="Historische Ansicht des Rathauses Gladbeck"
-                  loading="lazy"
-                />
-                <div class="hero-card__overlay hero-card__overlay--compact">
-                  <p class="hero-card__kicker">Rathaus &amp; Zugang</p>
-                  <h2>Verwaltung mit klaren Wegen statt Huerden.</h2>
-                  <p>
-                    Skip-Link, sichtbarer Fokus, Swipe-Menue, hohe Kontraste und grosszuegige
-                    Touchflaechen sind direkt integriert.
-                  </p>
+              <figcaption class="hero-card__overlay">
+                <span class="location-tag"
+                  ><span aria-hidden="true">&#9678;</span> Wasserschloss
+                  Wittringen</span
+                >
+                <div class="hero-card__bottom">
+                  <h2>Hier ist<br />drau&szlig;en Zuhause.</h2>
+                  <a
+                    class="round-link"
+                    href="#stories"
+                    aria-label="Gladbecks Orte entdecken"
+                    ><span aria-hidden="true">&nearr;</span></a
+                  >
                 </div>
-              </article>
-            </div>
+              </figcaption>
+            </figure>
+            <a
+              class="hero-location"
+              href="https://www.gladbeck.de/Rathaus_Politik/autostart.asp"
+              ><img
+                src="1906_115772_Rathaus_Gladbeck_klein (1).jpg"
+                alt=""
+                width="88"
+                height="88"
+                loading="lazy"
+              /><span
+                ><span class="eyebrow">Pers&ouml;nlich &amp; digital</span
+                ><strong>Dein kurzer Weg ins Rathaus.</strong></span
+              ><span aria-hidden="true">&nearr;</span></a
+            >
           </div>
         </div>
+        <nav
+          class="section-shell hero-shortcuts"
+          aria-label="H&auml;ufig gesucht"
+        >
+          <span class="hero-shortcuts__label">Direkt erledigen</span
+          ><a href="https://www.gladbeck.de/onlinetermin"
+            ><span class="shortcut-number" aria-hidden="true">01</span> Termin
+            buchen <span aria-hidden="true">&nearr;</span></a
+          ><a href="https://serviceportal.gladbeck.de/"
+            ><span class="shortcut-number" aria-hidden="true">02</span>
+            Online-Service <span aria-hidden="true">&nearr;</span></a
+          ><a
+            href="https://www.gladbeck.de/Rathaus_Politik/Rathaus/Rathaus_kompakt/Rufnummern.asp"
+            ><span class="shortcut-number" aria-hidden="true">03</span> Kontakt
+            finden <span aria-hidden="true">&nearr;</span></a
+          >
+        </nav>
       </section>
 
-      <section class="section section--pulse reveal" id="aktuell">
+      <section
+        class="section section--pulse reveal"
+        id="aktuell"
+        aria-labelledby="pulse-title"
+      >
         <div class="section-shell">
           <div class="section-heading section-heading--split">
             <div>
-              <p class="eyebrow">Aktuell aus Gladbeck</p>
-              <h2>Redaktioneller Einstieg mit echtem Stadtstand statt generischer Teaser.</h2>
+              <p class="eyebrow">Informiert bleiben</p>
+              <h2 id="pulse-title">
+                Aktuell aus<br />Gladbeck<span class="heading-dot">.</span>
+              </h2>
             </div>
-            <p class="section-note">
-              Die folgenden Meldungen basieren auf den aktuellen Inhalten der offiziellen
-              Gladbeck-Startseite mit Stand Donnerstag, 23. April 2026.
-            </p>
-          </div>
-
-          <div class="pulse-rail">
-            <div class="pulse-rail__controls" aria-label="Navigation durch aktuelle Meldungen">
-              <p class="pulse-rail__hint">Wischen, ziehen oder mit dem Mausrad horizontal durch die Meldungen gehen.</p>
-              <div class="pulse-rail__buttons">
-                <button class="rail-button" type="button" data-pulse-prev aria-label="Vorherige Meldungen">
-                  <span aria-hidden="true">&larr;</span>
-                </button>
-                <button class="rail-button" type="button" data-pulse-next aria-label="Naechste Meldungen">
-                  <span aria-hidden="true">&rarr;</span>
-                </button>
-              </div>
-            </div>
-
-            <div class="pulse-viewport" data-pulse-viewport tabindex="0" aria-label="Aktuelle Meldungen aus Gladbeck">
-              <div class="pulse-grid" id="pulse-grid"></div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="section section--newsletter reveal" id="newsletter">
-        <div class="section-shell">
-          <div class="newsletter-panel">
-            <div class="newsletter-copy">
-              <p class="eyebrow">Newsletter Gladbeck</p>
-              <h2>Verpasse nichts in deiner Stadt!</h2>
-              <p>
-                Melde dich fuer einen kompakten Stadt-Newsletter an und bekomme aktuelle Themen,
-                Termine, Kultur, Baustellen und Rathausinfos gebuendelt in einem klaren Format.
+            <div class="section-heading__aside">
+              <p>Was die Stadt bewegt, auf einen Blick.</p>
+              <p class="content-date">
+                Meldungsauswahl vom
+                <time datetime="2026-04-23">23. April 2026</time>
               </p>
-
-              <div class="newsletter-tags" aria-label="Newsletter Themen">
-                <span>Aktuelles</span>
-                <span>Veranstaltungen</span>
-                <span>Baustellen</span>
-                <span>Rathaus</span>
-                <span>Kultur</span>
-                <span>Familie</span>
+            </div>
+          </div>
+          <div class="pulse-rail">
+            <section
+              class="pulse-viewport"
+              data-pulse-viewport
+              tabindex="0"
+              aria-label="Meldungen durchbl&auml;ttern"
+              aria-describedby="pulse-hint"
+            >
+              <div class="pulse-grid" id="pulse-grid"></div>
+            </section>
+            <div class="pulse-rail__controls">
+              <p class="pulse-rail__hint" id="pulse-hint">
+                <span aria-hidden="true">&larr; &rarr;</span> Wischen, ziehen
+                oder mit dem Mausrad bl&auml;ttern.
+              </p>
+              <div class="pulse-rail__navigation">
+                <span
+                  class="pulse-counter"
+                  data-pulse-counter
+                  aria-hidden="true"
+                  >01 / 05</span
+                >
+                <div
+                  class="pulse-rail__buttons"
+                  role="group"
+                  aria-label="Meldungen durchbl&auml;ttern"
+                >
+                  <button
+                    class="rail-button"
+                    type="button"
+                    data-pulse-prev
+                    aria-label="Vorherige Meldung"
+                  >
+                    <span aria-hidden="true">&larr;</span></button
+                  ><button
+                    class="rail-button"
+                    type="button"
+                    data-pulse-next
+                    aria-label="N&auml;chste Meldung"
+                  >
+                    <span aria-hidden="true">&rarr;</span>
+                  </button>
+                </div>
               </div>
             </div>
-
-            <form class="newsletter-form" id="newsletter-form" novalidate>
-              <div class="newsletter-field">
-                <label for="newsletter-email">E-Mail-Adresse</label>
-                <input
-                  id="newsletter-email"
-                  name="email"
-                  type="email"
-                  autocomplete="email"
-                  placeholder="name@beispiel.de"
-                  required
-                  aria-describedby="newsletter-note newsletter-feedback"
-                />
-              </div>
-
-              <div class="newsletter-field">
-                <label for="newsletter-focus">Schwerpunkt</label>
-                <select id="newsletter-focus" name="focus">
-                  <option value="stadtweit">Ganz Gladbeck</option>
-                  <option value="kultur">Kultur &amp; Freizeit</option>
-                  <option value="rathaus">Rathaus &amp; Service</option>
-                  <option value="familie">Familie &amp; Bildung</option>
-                  <option value="mobilitaet">Mobilitaet &amp; Baustellen</option>
-                </select>
-              </div>
-
-              <label class="newsletter-check" for="newsletter-consent">
-                <input id="newsletter-consent" name="consent" type="checkbox" required />
-                <span>Ich stimme zu, dass diese Anmeldung im Prototyp geprueft wird.</span>
-              </label>
-
-              <div class="newsletter-actions">
-                <button class="button button--primary" type="submit">Newsletter vormerken</button>
-                <p class="newsletter-note" id="newsletter-note">
-                  Konzeptmodus: Im Livebetrieb wuerde hier die Anmeldung an einen echten Verteiler
-                  oder einen Dienst weitergeleitet.
-                </p>
-              </div>
-
-              <p class="newsletter-feedback" id="newsletter-feedback" aria-live="polite"></p>
-            </form>
           </div>
         </div>
       </section>
 
-      <section class="signal-strip reveal" aria-label="Signalzeile">
-        <div class="signal-strip__track">
-          <span>Heimat-Preis 2026</span>
-          <span>Open-Air-Sommer</span>
-          <span>Gladbeck 2035</span>
-          <span>Mobilitaets- und Klimatag</span>
-          <span>Radvorrangroute</span>
-          <span>Jugendkonferenz 2026</span>
+      <section
+        class="section section--newsletter reveal"
+        id="newsletter"
+        aria-labelledby="newsletter-title"
+      >
+        <div class="section-shell newsletter-panel">
+          <div class="newsletter-copy">
+            <p class="eyebrow">Deine Stadt im Postfach</p>
+            <h2 id="newsletter-title">Verpasse nichts<br />in deiner Stadt!</h2>
+            <p>
+              Die wichtigsten Meldungen, Kultur und Termine. Kompakt, lokal und
+              genau die Themen, die dich interessieren.
+            </p>
+            <ul class="newsletter-tags">
+              <li>Stadtleben</li>
+              <li>Kultur</li>
+              <li>Rathaus</li>
+            </ul>
+          </div>
+          <form class="newsletter-form" id="newsletter-form" novalidate>
+            <div class="newsletter-field">
+              <label for="newsletter-email">Deine E-Mail-Adresse</label
+              ><input
+                id="newsletter-email"
+                name="email"
+                type="email"
+                autocomplete="email"
+                placeholder="name@beispiel.de"
+                required
+                aria-describedby="newsletter-note newsletter-feedback"
+              />
+            </div>
+            <div class="newsletter-field">
+              <label for="newsletter-focus">Was interessiert dich?</label
+              ><select id="newsletter-focus" name="focus">
+                <option value="stadtweit">Ganz Gladbeck</option>
+                <option value="kultur">Kultur &amp; Freizeit</option>
+                <option value="rathaus">Rathaus &amp; Service</option>
+                <option value="familie">Familie &amp; Bildung</option>
+                <option value="mobilitaet">
+                  Mobilit&auml;t &amp; Baustellen
+                </option>
+              </select>
+            </div>
+            <label class="newsletter-check"
+              ><input
+                id="newsletter-consent"
+                name="consent"
+                type="checkbox"
+                required
+              /><span
+                >Ich m&ouml;chte das Anmeldeformular ausprobieren.</span
+              ></label
+            >
+            <button class="button button--dark" type="submit">
+              Anmeldung ausprobieren <span aria-hidden="true">&rarr;</span>
+            </button>
+            <p class="newsletter-note" id="newsletter-note">
+              Demo: Es werden keine Daten gespeichert und keine E-Mails
+              versendet.
+            </p>
+            <p
+              class="newsletter-feedback"
+              id="newsletter-feedback"
+              role="status"
+              aria-live="polite"
+            ></p>
+          </form>
         </div>
       </section>
 
-      <section class="section reveal" id="quicklinks">
+      <section
+        class="section reveal"
+        id="quicklinks"
+        aria-labelledby="services-title"
+      >
         <div class="section-shell">
-          <div class="section-heading">
-            <p class="eyebrow">Offizielle Schnellzugriffe</p>
-            <h2>Die erste Ebene fuehrt direkt zu den Dingen, die Nutzerinnen und Nutzer wirklich brauchen.</h2>
+          <div class="section-heading section-heading--split">
+            <div>
+              <p class="eyebrow">Einfach erledigt</p>
+              <h2 id="services-title">Dein Anliegen.<br />Der direkte Weg.</h2>
+            </div>
             <p>
-              Services, Termine, Kontaktdaten und politische Transparenz liegen sofort sichtbar auf
-              der Startseite und fuehren auf offizielle Ziele der Stadt.
+              Termin, Antrag oder die richtige Ansprechperson: Hier geht es
+              direkt zum offiziellen Angebot der Stadt.
             </p>
           </div>
-
           <div class="quicklinks-grid" id="quicklinks-grid"></div>
         </div>
       </section>
-
-      <section class="section section--dense reveal" id="themen">
+      <section
+        class="section section--dense reveal"
+        id="themen"
+        aria-labelledby="themes-title"
+      >
         <div class="section-shell">
-          <div class="section-heading">
-            <p class="eyebrow">Themenfelder der Stadt</p>
-            <h2>Die grossen Bereiche bleiben erhalten, werden aber inhaltlich sichtbarer aufgeladen.</h2>
+          <div class="section-heading section-heading--split">
+            <div>
+              <p class="eyebrow">F&uuml;r jede Lebenslage</p>
+              <h2 id="themes-title">Was dich<br />bewegt.</h2>
+            </div>
             <p>
-              Jede Themenwelt verweist auf den offiziellen Bereich und zeigt gleichzeitig, welche
-              aktuellen Projekte, Meldungen oder Debatten dort gerade wirklich relevant sind.
+              Sechs Themenwelten. Viele M&ouml;glichkeiten, dein Gladbeck zu
+              gestalten.
             </p>
           </div>
-
           <div class="themes-grid" id="themes-grid"></div>
         </div>
       </section>
-
-      <section class="section section--stories reveal" id="stories">
+      <section
+        class="section section--stories reveal"
+        id="stories"
+        aria-labelledby="stories-title"
+      >
         <div class="section-shell">
           <div class="section-heading section-heading--split">
             <div>
-              <p class="eyebrow">Bildwelten, Reels &amp; Kampagnen</p>
-              <h2>Aktuelle Gladbeck-Themen koennen als 9:16-Storys deutlich staerker inszeniert werden.</h2>
+              <p class="eyebrow">Neue Perspektiven</p>
+              <h2 id="stories-title">So viel<br />Gladbeck.</h2>
             </div>
-            <p class="section-note">
-              Die lokale Bildsprache ist jetzt direkt eingebunden: Schloss, Rathaus,
-              Erinnerungsorte und Stadtlandschaften koennen als Reels, Story-Slides oder
-              Video-Teaser weiter ausgebaut werden.
+            <p>
+              Lieblingsorte, kleine Auszeiten und Geschichten aus deiner Stadt.
+              Entdecke mehr hinter dem Bild.
             </p>
           </div>
-
           <div class="stories-layout">
             <article class="stories-feature stories-feature--gladbeck">
-              <p class="stories-feature__eyebrow">Medienbuehne</p>
-              <h3>Von Open-Air-Sommer bis Stadtentwicklung: Hier bekommt Gladbeck Haltung und Rhythmus.</h3>
+              <p class="eyebrow">Raus ins Gr&uuml;ne</p>
+              <h3>Ein bisschen<br />raus. Ganz<br />bei dir.</h3>
               <p>
-                Das Modul kombiniert eine starke Leitflaeche mit scrollbaren Hochformatkarten und
-                verlinkt direkt in aktuelle Themen, Kampagnen und Veranstaltungslinien der Stadt.
+                Wasser, alte Mauern und gr&uuml;ne Wege. Rund um Wittringen
+                beginnt die kleine Auszeit direkt vor deiner T&uuml;r.
               </p>
-
-              <div class="stories-feature__badges">
-                <span>Reels</span>
-                <span>Sommerprogramm</span>
-                <span>Stadtgespraeche</span>
-                <span>Event-Teaser</span>
-              </div>
+              <a
+                class="button button--light"
+                href="https://www.gladbeck.de/Kultur_Tourismus/Sehenswuerdigkeiten/autostart.asp"
+                >Ausflugsziele entdecken
+                <span aria-hidden="true">&nearr;</span></a
+              >
             </article>
-
-            <div class="stories-rail" id="stories-rail"></div>
+            <section
+              class="stories-rail"
+              id="stories-rail"
+              aria-label="Gladbeck in Bildern"
+              tabindex="0"
+            ></section>
           </div>
-
           <div class="video-slots" id="video-slots"></div>
         </div>
       </section>
-
-      <section class="section section--access reveal" id="barrierefreiheit">
+      <section
+        class="section section--access reveal"
+        id="barrierefreiheit"
+        aria-labelledby="access-title"
+      >
         <div class="section-shell">
           <div class="section-heading section-heading--split">
             <div>
-              <p class="eyebrow">Barrierefreier Zugang</p>
-              <h2>Die beste Loesung ist fest in die Seite eingebaut, nicht als nachtraegliches Widget.</h2>
+              <p class="eyebrow">F&uuml;r alle da</p>
+              <h2 id="access-title">Dein Zugang<br />z&auml;hlt.</h2>
             </div>
-            <p class="section-note">
-              Die Seite priorisiert klare Bereiche, Touch- und Tastaturbedienung, lesbare
-              Kontraste und reduzierte Bewegung. So bleibt sie fuer eine breite Oeffentlichkeit
-              direkt nutzbar und spaeter um Leichte Sprache oder DGS-Angebote erweiterbar.
+            <p>
+              Mit Tastatur, Touch oder Maus: Du bestimmst, wie du dich durch die
+              Seite bewegst. Bewegung wird an deine Ger&auml;teeinstellung
+              angepasst.
             </p>
           </div>
-
           <div class="access-grid" id="access-grid"></div>
         </div>
       </section>
-
-      <section class="section reveal" id="newsroom">
+      <section
+        class="section reveal"
+        id="newsroom"
+        aria-labelledby="news-title"
+      >
         <div class="section-shell">
-          <div class="section-heading">
-            <p class="eyebrow">Newsroom</p>
-            <h2>Aktuelle Meldungen aus dem offiziellen Portal werden als moderner Newsfeed lesbarer.</h2>
+          <div class="section-heading section-heading--split">
+            <div>
+              <p class="eyebrow">Aus dem Stadtgeschehen</p>
+              <h2 id="news-title">Mehr erfahren.<br />N&auml;her dran.</h2>
+            </div>
             <p>
-              Die Struktur arbeitet mit einem Schwerpunkt, klaren Datumsmarken und direkter
-              Verlinkung auf `gladbeck.de`, statt Meldungen nur linear untereinander zu stapeln.
+              Hintergr&uuml;nde zu Kultur, Stadtentwicklung und dem Leben vor
+              Ort. Archiv-Auswahl aus April 2026.
             </p>
           </div>
-
           <div class="news-grid" id="news-grid"></div>
         </div>
       </section>
-
-      <section class="section section--agenda reveal" id="termine">
+      <section
+        class="section section--agenda reveal"
+        id="termine"
+        aria-labelledby="agenda-title"
+      >
         <div class="section-shell agenda-layout">
           <div class="agenda-copy">
-            <p class="eyebrow">Naechste Termine &amp; Themen</p>
-            <h2>Die Startseite kann laufende Termine, Fristen und Stadttermine deutlich besser gewichten.</h2>
+            <p class="eyebrow">Aus dem Veranstaltungskalender</p>
+            <h2 id="agenda-title">Stadtleben<br />zum Mitmachen.</h2>
             <p>
-              Heute, diese Woche und in den naechsten Tagen relevante Termine wirken hier nicht
-              wie versteckte Randnotizen, sondern wie echte redaktionelle Signale auf der Startseite.
+              Eine Auswahl aus April und Mai 2026. Weitere und aktuelle Termine
+              findest du auf der offiziellen Stadtseite.
             </p>
+            <a class="text-link" href="https://www.gladbeck.de/"
+              >Zum Stadtportal <span aria-hidden="true">&nearr;</span></a
+            >
           </div>
-
           <div class="agenda-list" id="agenda-list"></div>
         </div>
       </section>
+      <noscript
+        ><p class="section-shell">
+          Bitte aktiviere JavaScript f&uuml;r die Men&uuml;suche und die
+          interaktiven Meldungen.
+          <a class="text-link" href="https://www.gladbeck.de/"
+            >Alle Angebote auf gladbeck.de</a
+          >
+        </p></noscript
+      >
     </main>
 
     <footer class="site-footer">
       <div class="site-footer__brand">
-        <img src="assets/media/brand/gladbeck-logo.webp" alt="Stadt Gladbeck" />
-        <p>Modernisierte Konzeptseite mit aktuellen Inhalten, offiziellen Links und staerkerer redaktioneller Gewichtung.</p>
+        <img
+          src="assets/media/brand/gladbeck-logo.webp"
+          alt="Stadt Gladbeck"
+          width="116"
+          height="44"
+          loading="lazy"
+        />
+        <p>
+          Deine Stadt. Dein Alltag.<br />Mitten im Leben. Mitten im Ruhrgebiet.
+        </p>
       </div>
-
-      <div class="site-footer__links">
-        <a href="#aktuell">Aktuell</a>
-        <a href="#quicklinks">Services</a>
-        <a href="#themen">Themen</a>
-        <a href="#stories">Reels</a>
-        <a href="#barrierefreiheit">Barrierefrei</a>
-        <a href="#newsroom">Aktuelles</a>
-      </div>
-
+      <nav class="site-footer__links" aria-label="Seitennavigation">
+        <a href="#quicklinks">Service</a><a href="#aktuell">Aktuelles</a
+        ><a href="#themen">Themen</a><a href="#stories">Entdecken</a
+        ><a href="#barrierefreiheit">Zug&auml;nglichkeit</a
+        ><a href="#newsletter">Newsletter</a>
+      </nav>
       <p class="site-footer__meta">
-        Konzeptjahr <span id="footer-year"></span> | Inhaltsstand <span id="footer-content-date">23.04.2026</span>
+        <span
+          >Website-Entwurf &middot; <span id="footer-year"></span> &middot;
+          Inhaltsstand <span id="footer-content-date">23.04.2026</span></span
+        ><a href="#start">Nach oben <span aria-hidden="true">&uarr;</span></a>
       </p>
     </footer>
   </body>

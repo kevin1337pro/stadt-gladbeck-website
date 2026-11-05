@@ -1,0 +1,26 @@
+{
+  "name": "stadt-gladbeck-website",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Modernisierte Konzeptseite fuer das Stadtportal Gladbeck.",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "preview": "vite preview --host 0.0.0.0",
+    "build": "vite build",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "lint:html": "html-validate index.html",
+    "lint:css": "stylelint \"assets/css/**/*.css\"",
+    "test:ui": "playwright test",
+    "check": "npm run format:check && npm run lint:html && npm run lint:css && npm run build"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.65.0",
+    "html-validate": "^8.27.0",
+    "prettier": "^3.3.3",
+    "stylelint": "^16.9.0",
+    "stylelint-config-standard": "^36.0.1",
+    "vite": "^8.0.10"
+  }
+}
