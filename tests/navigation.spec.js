@@ -142,11 +142,11 @@ test("a normal menu click follows the service link", async ({ page }) => {
   await expect(page.locator("#hero-title")).toBeVisible();
 });
 
-test("branding, metadata and active resources are city-neutral", async ({
+test("neutral branding does not reintroduce the former city identity", async ({
   page,
 }) => {
   const cityReference =
-    /gladn?beck|wittringen|ellinghorst|ruhrgebiet|bettina|weist|hunsr[\u00fcue]+ck|willy.brandt|nordpark/i;
+    /gladn?beck|wittringen|ellinghorst|bettina|weist|hunsr[\u00fcue]+ck|nordpark/i;
   await expect(page).toHaveTitle("Deine Stadt | Dein Alltag. Dein Zuhause.");
   await expect(page.locator(".brand__wordmark").first()).toHaveText(
     "deinestadt.",
@@ -168,7 +168,7 @@ test("branding, metadata and active resources are city-neutral", async ({
     expect(source).not.toMatch(cityReference);
   }
   const links = await page
-    .locator("a[href]")
+    .locator("a[href]:not(.image-credits a)")
     .evaluateAll((elements) =>
       elements.map((element) => element.getAttribute("href")),
     );
@@ -180,6 +180,92 @@ test("branding, metadata and active resources are city-neutral", async ({
         href,
       ).toBe(true);
     }
+  }
+});
+
+test("the new logo and all four Ruhr photos replace the old imagery", async ({
+  page,
+}) => {
+  await expect(page.locator(".brand__symbol")).toHaveCount(2);
+  // Vite may inline the small logo while emitting the favicon as a file.
+  const logoPaths = await page.evaluate(async () => {
+    const urls = [
+      ...[...document.querySelectorAll(".brand__symbol")].map(
+        (image) => image.src,
+      ),
+      document.querySelector('link[rel="icon"]').href,
+    ];
+    return Promise.all(
+      urls.map(async (url) => {
+        const response = await fetch(url);
+        const svg = new DOMParser().parseFromString(
+          await response.text(),
+          "image/svg+xml",
+        );
+        return svg.querySelector("path")?.getAttribute("d");
+      }),
+    );
+  });
+  expect(logoPaths[0]).toBeTruthy();
+  expect(new Set(logoPaths).size).toBe(1);
+  await expect(page.locator(".hero-card__media")).toHaveAttribute(
+    "alt",
+    /Duisburger Innenhafen/,
+  );
+  await expect(page.locator(".story-card__badge")).toHaveText([
+    "Duisburg",
+    "Dortmund",
+    "Bochum",
+    "Essen",
+  ]);
+  const sources = await page
+    .locator("img")
+    .evaluateAll((images) => images.map((image) => image.src));
+  for (const name of [
+    "duisburg-innenhafen",
+    "dortmund-phoenixsee",
+    "bochum-rathaus",
+    "essen-zollverein",
+  ]) {
+    expect(sources.some((source) => source.includes(name))).toBe(true);
+  }
+  expect(sources.join(" ")).not.toMatch(
+    /park-aerial|waterside|town-hall|stone-arches/,
+  );
+  const background = await page
+    .locator(".stories-feature")
+    .evaluate((element) => getComputedStyle(element).backgroundImage);
+  expect(background).toContain("dortmund-phoenixsee");
+});
+
+test("photo attribution is keyboard accessible on home and detail pages", async ({
+  page,
+}) => {
+  for (const route of ["/", "/?seite=serviceportal"]) {
+    await page.goto(route);
+    const credits = page.locator("#bildnachweise");
+    await credits.locator("summary").focus();
+    await page.keyboard.press("Enter");
+    await expect(credits).toHaveAttribute("open", "");
+    await expect(credits.locator("li")).toHaveCount(4);
+    await expect(credits).toContainText("Steffen Schmitz");
+    await expect(credits).toContainText("Lucas Kaufmann");
+    await expect(credits).toContainText("Frank Vincentz");
+    await expect(credits).toContainText("SimpleMinder");
+    const links = await credits
+      .locator("a")
+      .evaluateAll((elements) => elements.map((element) => element.href));
+    expect(links).toHaveLength(8);
+    links.forEach((href) =>
+      expect(["commons.wikimedia.org", "creativecommons.org"]).toContain(
+        new URL(href).hostname,
+      ),
+    );
+    expect(
+      await page.evaluate(
+        () => document.documentElement.scrollWidth <= innerWidth + 1,
+      ),
+    ).toBe(true);
   }
 });
 

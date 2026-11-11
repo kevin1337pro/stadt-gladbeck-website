@@ -35,7 +35,9 @@ Die Inhalte stehen zentral in `assets/js/content.js`; es gibt keine CMS-Anbindun
 Menue, Suche und Karten fuehren zu lokalen Detailseiten ueber `?seite=...`.
 Diese funktionieren auch direkt auf GitHub Pages ohne Server-Routing.
 
-Die vorhandenen Fotos bleiben als illustrative Bildwelt unter neutralen Asset-Namen erhalten. Sie zeigen weiterhin reale, moeglicherweise erkennbare Orte; die Umstellung ist keine vollstaendige visuelle Anonymisierung. Originaldateien und Git-Historie werden nicht geloescht.
+Die aktive Bildwelt zeigt echte Stadtaufnahmen aus Duisburg, Dortmund, Bochum und Essen. Alle vorher verwendeten Fotos wurden in Header, Rathaus-Kachel, Stories und Hintergrundflaeche ersetzt. Fotografen, Quellen und Bildlizenzen sind im aufklappbaren Bildnachweis im Footer sowie in [CREDITS.md](assets/media/city/CREDITS.md) dokumentiert. Historische Originaldateien und Git-Historie bleiben unveraendert.
+
+Die Wort-Bild-Marke kombiniert ein geometrisches D mit einer ausgesparten Stadtsilhouette und der Wortmarke "deine stadt.". Das Symbol in `assets/media/brand/deine-stadt.svg` wird in Header, Footer und als Favicon verwendet und bleibt in jeder Groesse scharf. Es besteht aus nativen SVG-Pfaden, nicht aus einem Bitmap-Platzhalter.
 
 `npm run build` erzeugt einen Build mit relativen Asset-Pfaden in `dist/`.
 Dadurch kann er auch unter einem Unterverzeichnis ausgeliefert werden.

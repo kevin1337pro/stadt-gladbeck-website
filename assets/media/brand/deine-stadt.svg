@@ -1,4 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" rx="16" fill="#123f61" />
-  <path d="M13 49V27l12-8v30m5 0V13h12v36m5 0V31h5v18" fill="none" stroke="#c2f75a" stroke-width="5" stroke-linejoin="round" />
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
+  <title id="title">Deine Stadt</title>
+  <desc id="desc">Ein D mit einer ausgesparten Stadtsilhouette.</desc>
+  <rect width="64" height="64" rx="17" fill="#c2f75a" />
+  <path fill="#123f61" fill-rule="evenodd" d="M14 12h16c14 0 24 8 24 20S44 52 30 52H14V12Zm10 29h19V29h-7V20h-8v12h-4v9Z" />
 </svg>
