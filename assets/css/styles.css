@@ -173,9 +173,20 @@ main:focus {
   min-width: 0;
 }
 
-.brand__logo {
-  width: 7.25rem;
-  height: auto;
+.brand__wordmark {
+  display: inline-flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  font-family: "Syne", sans-serif;
+  font-size: 1.55rem;
+  font-weight: 800;
+  line-height: 0.9;
+  letter-spacing: -0.07em;
+  color: var(--navy);
+}
+
+.brand__wordmark span {
+  display: block;
 }
 
 .brand__copy {
@@ -1090,11 +1101,10 @@ main:focus {
   color: white;
 }
 
-.stories-feature--gladbeck {
+.stories-feature--nature {
   background:
     linear-gradient(180deg, #0b211844, #0b2118f0),
-    url("../../csm_gladbeck_gladbecker-rundtour_bild01_1deed78dfb.jpg") center /
-      cover;
+    url("../media/city/waterside.jpg") center / cover;
 }
 
 .stories-feature .eyebrow {
@@ -1315,9 +1325,61 @@ main:focus {
   border-top: 1px solid var(--line);
 }
 
-.site-footer__brand img {
-  width: 7.25rem;
-  height: auto;
+.demo-note {
+  max-width: 34rem;
+  margin-top: 1.25rem;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.detail-page {
+  min-height: 65vh;
+}
+
+.detail-page > .section-shell {
+  max-width: 64rem;
+}
+
+.detail-back {
+  display: inline-block;
+  margin-bottom: 2.5rem;
+}
+
+.detail-page h1 {
+  max-width: 18ch;
+  margin-block: 1rem 1.5rem;
+  font-size: clamp(2.25rem, 6vw, 5rem);
+  line-height: 1.08;
+}
+
+.detail-intro {
+  max-width: 55ch;
+  font-size: clamp(1rem, 2vw, 1.25rem);
+}
+
+.detail-notice {
+  display: grid;
+  gap: 0.8rem;
+  padding: clamp(1.25rem, 3vw, 2rem);
+  margin-block: 2.5rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: var(--paper-strong);
+}
+
+.detail-notice h2,
+.detail-related h2 {
+  font-size: 1.5rem;
+  line-height: 1.25;
+}
+
+.detail-related h2 {
+  margin-block: 2rem 1.25rem;
+}
+
+.detail-related .quicklink-card {
+  min-height: 0;
+  gap: 1rem;
 }
 
 .site-footer__brand p {
@@ -2079,8 +2141,8 @@ kbd {
     padding: 0.65rem 0.7rem 0.65rem 1rem;
   }
 
-  .brand__logo {
-    width: 6rem;
+  .brand__wordmark {
+    font-size: 1.4rem;
   }
 
   .header-link {

@@ -1,4 +1,6 @@
 import { expect, test } from "@playwright/test";
+import { readFileSync } from "node:fs";
+import { detailPages } from "../assets/js/content.js";
 
 const pageErrors = new WeakMap();
 
@@ -124,19 +126,105 @@ test("all topics open, return to the selected topic and close with focus restore
 });
 
 test("a normal menu click follows the service link", async ({ page }) => {
-  await page.route("https://serviceportal.gladbeck.de/**", (route) =>
-    route.fulfill({
-      contentType: "text/html",
-      body: "<h1>Serviceportal Ziel</h1>",
-    }),
-  );
   await openMenu(page);
   await page.locator('[data-open-panel="rathaus"]').click();
   await page.locator("#menu-panel-rathaus a").first().click();
-  await expect(page).toHaveURL("https://serviceportal.gladbeck.de/");
+  await expect(page).toHaveURL(/\?seite=serviceportal$/);
   await expect(
-    page.getByRole("heading", { name: "Serviceportal Ziel" }),
+    page.getByRole("heading", { name: "Serviceportal", exact: true }),
   ).toBeVisible();
+  await expect(page.locator("#detail-title")).toBeFocused();
+  await expect(page.locator("#home-content")).toBeHidden();
+  await expect(page.locator(".detail-notice")).toContainText("keine Antr");
+  await page.reload();
+  await expect(page.locator("#detail-title")).toHaveText("Serviceportal");
+  await page.locator(".detail-back").click();
+  await expect(page.locator("#hero-title")).toBeVisible();
+});
+
+test("branding, metadata and active resources are city-neutral", async ({
+  page,
+}) => {
+  const cityReference =
+    /gladn?beck|wittringen|ellinghorst|ruhrgebiet|bettina|weist|hunsr[\u00fcue]+ck|willy.brandt|nordpark/i;
+  await expect(page).toHaveTitle("Deine Stadt | Dein Alltag. Dein Zuhause.");
+  await expect(page.locator(".brand__wordmark").first()).toHaveText(
+    "deinestadt.",
+  );
+  await expect(page.locator(".demo-note")).toContainText("Beispielinhalten");
+  const publicContent = await page.evaluate(() => ({
+    text: document.documentElement.textContent,
+    attributes: [...document.querySelectorAll("*")].flatMap((element) =>
+      [...element.attributes].map((attribute) => attribute.value),
+    ),
+  }));
+  expect(JSON.stringify(publicContent)).not.toMatch(cityReference);
+  for (const file of [
+    "/assets/js/main.js",
+    "/assets/js/content.js",
+    "/assets/css/styles.css",
+  ]) {
+    const source = readFileSync(new URL(".." + file, import.meta.url), "utf8");
+    expect(source).not.toMatch(cityReference);
+  }
+  const links = await page
+    .locator("a[href]")
+    .evaluateAll((elements) =>
+      elements.map((element) => element.getAttribute("href")),
+    );
+  for (const href of links) {
+    expect(href).not.toMatch(/^https?:/);
+    if (href.startsWith("?seite=")) {
+      expect(
+        detailPages.has(new URLSearchParams(href).get("seite")),
+        href,
+      ).toBe(true);
+    }
+  }
+});
+
+test("all neutral detail destinations work when opened directly", async ({
+  page,
+}) => {
+  test.setTimeout(90_000);
+  for (const [id, item] of detailPages) {
+    await page.goto("/?seite=" + id, { waitUntil: "domcontentloaded" });
+    await expect(page.locator("#detail-title")).toHaveText(item.title);
+    await expect(page.locator("#detail-page")).toBeVisible();
+    await expect(page.locator("#home-content")).toBeHidden();
+    expect(
+      await page.evaluate(
+        () => document.documentElement.scrollWidth <= innerWidth + 1,
+      ),
+    ).toBe(true);
+  }
+});
+
+test("detail pages keep menu search and landing shortcuts usable", async ({
+  page,
+}) => {
+  await page.goto("/?seite=rathaus");
+  await openMenu(page);
+  const search = page.getByLabel("Services und Themen im Men\u00fc suchen");
+  await search.fill("Personalausweis");
+  await page.locator("#menu-results a").click();
+  await expect(page).toHaveURL(/\?seite=serviceportal$/);
+  await expect(page.locator("#detail-title")).toHaveText("Serviceportal");
+  await openMenu(page);
+  await page.locator('.menu-shortcuts a[href="./#quicklinks"]').click();
+  await expect(page).toHaveURL(/\/#quicklinks$/);
+  await expect(page.locator("#home-content")).toBeVisible();
+  await expect(page.locator("#services-title")).toBeInViewport();
+});
+
+test("unknown detail links show a safe fallback", async ({ page }) => {
+  await page.goto("/?seite=%3Cimg%20src=x%20onerror=alert(1)%3E");
+  await expect(page.locator("#detail-title")).toHaveText(
+    "Diese Seite gibt es nicht",
+  );
+  await expect(page.locator("#detail-page img")).toHaveCount(0);
+  await page.locator(".detail-back").click();
+  await expect(page.locator("#hero-title")).toBeVisible();
 });
 
 test("search understands service terms and alternative umlaut spelling", async ({

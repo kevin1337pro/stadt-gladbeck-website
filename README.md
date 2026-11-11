@@ -1,6 +1,6 @@
-# Stadt Gladbeck Website
+# Deine Stadt
 
-Modernisierte Konzeptseite fuer ein wertigeres Stadtportal Gladbeck. Der aktuelle Stand ist ein statischer Frontend-Prototyp mit lokalen Bildwelten, redaktionellen Modulen, Schnellzugriffen, News, Newsletter-Prototyp und barrierearmen Interaktionsmustern.
+Ortsneutraler Stadtportal-Entwurf mit Bildwelten, Themenbereichen, Schnellzugriffen, Beispielmeldungen, Newsletter-Demo und barrierearmen Interaktionsmustern. Kein offizielles Angebot einer Kommune.
 
 ## Entwicklung
 
@@ -29,18 +29,20 @@ vollen Textkontrast. Die Fokusanzeige unterstuetzt Touch, Maus und Tastatur.
 Der News-Streifen laesst sich horizontal bewegen; am Ende gibt das Mausrad
 den vertikalen Seitenscroll wieder frei.
 
-Die Meldungen und Termine sind eine klar datierte Auswahl aus April/Mai 2026.
+Die Meldungen und Veranstaltungen sind fiktive, gekennzeichnete Beispielinhalte ohne echte Termine, Kontaktpersonen oder Behoerdenlinks.
 Der Newsletter ist eine Formular-Demo und speichert keine Anmeldungen.
-Die Inhalte stehen weiterhin in `assets/js/main.js`; es gibt keine CMS-Anbindung.
+Die Inhalte stehen zentral in `assets/js/content.js`; es gibt keine CMS-Anbindung.
+Menue, Suche und Karten fuehren zu lokalen Detailseiten ueber `?seite=...`.
+Diese funktionieren auch direkt auf GitHub Pages ohne Server-Routing.
+
+Die vorhandenen Fotos bleiben als illustrative Bildwelt unter neutralen Asset-Namen erhalten. Sie zeigen weiterhin reale, moeglicherweise erkennbare Orte; die Umstellung ist keine vollstaendige visuelle Anonymisierung. Originaldateien und Git-Historie werden nicht geloescht.
 
 `npm run build` erzeugt einen Build mit relativen Asset-Pfaden in `dist/`.
 Dadurch kann er auch unter einem Unterverzeichnis ausgeliefert werden.
 
 ## Veroeffentlichung
 
-Die oeffentliche Vorschau liegt unter:
-
-https://kevin1337pro.github.io/stadt-gladbeck-website/
+Die oeffentliche Vorschau bleibt unter der bestehenden GitHub-Pages-Adresse erreichbar. Repository-Name und URL werden durch die inhaltliche Neutralisierung nicht geaendert.
 
 GitHub Pages veroeffentlicht die statischen Dateien aus dem Wurzelverzeichnis
 des Branches `main`. Die Datei `.nojekyll` deaktiviert die Jekyll-Verarbeitung.

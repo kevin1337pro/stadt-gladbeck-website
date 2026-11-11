@@ -1,434 +1,14 @@
-const CONTENT_STAND = "23.04.2026";
-const OFFICIAL_BASE = "https://www.gladbeck.de";
-const EXTERNAL_ATTRS = 'rel="external"';
-
-const pulseItems = [
-  {
-    label: "23.04.2026",
-    title: "Heimat-Preis 2026: Engagement auszeichnen",
-    text: "5.000 Euro f\u00fcr ehrenamtliches Engagement: Die Stadt informierte im April \u00fcber den Heimat-Preis 2026.",
-    href: `${OFFICIAL_BASE}/index.asp?form=detail&db=404&id=5524`,
-  },
-  {
-    label: "23.04.2026",
-    title: "Ein Sommer voller Kultur",
-    text: "Konzerte, Sommerabende und Begegnungen unter freiem Himmel: ein Blick auf das Sommerprogramm 2026.",
-    href: `${OFFICIAL_BASE}/index.asp?form=detail&db=404&id=5525`,
-  },
-  {
-    label: "22.04.2026",
-    title: "Ellinghorst kommt ins Gespr\u00e4ch",
-    text: "Im direkten Austausch mit der B\u00fcrgermeisterin ging es um Fragen und Ideen aus dem Stadtteil.",
-    href: `${OFFICIAL_BASE}/index.asp?form=detail&db=404&id=5526`,
-  },
-  {
-    label: "21.04.2026",
-    title: "Junge Ideen f\u00fcr Europa",
-    text: "Die vierte Jugendkonferenz im Mai 2026 stand im Zeichen von Europa und internationalem Austausch.",
-    href: `${OFFICIAL_BASE}/index.asp?form=detail&db=404&id=5521`,
-  },
-  {
-    label: "17.04.2026",
-    title: "Neue Wege f\u00fcr Gladbeck",
-    text: "Im April begannen Stra\u00dfensanierungen in mehreren Stadtteilen. Details und Hintergr\u00fcnde im offiziellen Beitrag.",
-    href: `${OFFICIAL_BASE}/index.asp?form=detail&db=404&id=5519`,
-  },
-];
-
-const quicklinks = [
-  {
-    tone: "lime",
-    label: "24/7 erledigen",
-    title: "Serviceportal",
-    text: "Digitale Dienstleistungen f\u00fcr Pass-, Melde-, Gewerbe- und Lebensthemen zentral erreichbar.",
-    meta: "Offiziell",
-    href: "https://serviceportal.gladbeck.de/",
-  },
-  {
-    tone: "navy",
-    label: "Termin sichern",
-    title: "Online-Termine",
-    text: "Termine im B\u00fcrgeramt und Ausl\u00e4nderamt direkt online buchen.",
-    meta: "Rathaus",
-    href: `${OFFICIAL_BASE}/onlinetermin`,
-  },
-  {
-    tone: "light",
-    label: "Rathaus direkt",
-    title: "Rufnummern im Rathaus",
-    text: "Kontakte, Durchwahlen und wichtige Ansprechstellen ohne Suchwege finden.",
-    meta: "Kontakt",
-    href: `${OFFICIAL_BASE}/Rathaus_Politik/Rathaus/Rathaus_kompakt/Rufnummern.asp`,
-  },
-  {
-    tone: "sand",
-    label: "Karriere",
-    title: "Arbeiten bei der Stadt",
-    text: "Stellen, Ausbildung und Arbeitgebermarke der Stadt Gladbeck an einem Ort.",
-    meta: "Jobs",
-    href: `${OFFICIAL_BASE}/Rathaus_Politik/Rathaus/Arbeiten_bei_der_Stadt_Gladbeck/autostart.asp?highmain=2&highsub=11&highsubsub=0`,
-  },
-  {
-    tone: "light",
-    label: "Politik live",
-    title: "Ratssitzungen",
-    text: "Video\u00fcbertragungen und politische Sitzungsinformationen transparent aufbereitet.",
-    meta: "Livestream",
-    href: `${OFFICIAL_BASE}/Rathaus_Politik/Politik/Rat_der_Stadt/Videouebertragungen.asp`,
-  },
-  {
-    tone: "navy",
-    label: "Verkehr",
-    title: "Aktuelle Baustellen",
-    text: "Sperrungen, Sanierungen und laufende Verkehrsmassnahmen in Gladbeck.",
-    meta: "Mobilit\u00e4t",
-    href: `${OFFICIAL_BASE}/Leben_Wohnen/Ingenieuramt_Beta/Aktuelle_Baustellen/autostart.asp`,
-  },
-];
-
-const themes = [
-  {
-    id: "rathaus",
-    tone: "navy",
-    label: "Rathaus & Politik",
-    title: "Rathaus & Politik",
-    text: "Dein Kontakt zur Verwaltung. Entscheidungen verstehen und die eigene Stadt mitgestalten.",
-    tags: ["Heimat-Preis 2026", "Rathaus News", "Ratssitzungen"],
-    href: `${OFFICIAL_BASE}/Rathaus_Politik/autostart.asp`,
-  },
-  {
-    id: "familie",
-    tone: "lime",
-    label: "Familie & Bildung",
-    title: "Familie & Bildung",
-    text: "Von den ersten Schritten bis ins hohe Alter: Angebote f\u00fcr jede Generation.",
-    tags: [
-      "Fr\u00fche Bildung",
-      "Spielplatz Hunsr\u00fcckstra\u00dfe",
-      "Seniorenprogramm",
-    ],
-    href: `${OFFICIAL_BASE}/Familie_Bildung/autostart.asp`,
-  },
-  {
-    id: "wohnen",
-    tone: "light",
-    label: "Leben & Wohnen",
-    title: "Leben & Wohnen",
-    text: "Ein Zuhause finden, mobil bleiben und das eigene Quartier kennenlernen.",
-    tags: ["Radvorrangroute", "Europabr\u00fccke", "Baustellen"],
-    href: `${OFFICIAL_BASE}/Leben_Wohnen/autostart.asp`,
-  },
-  {
-    id: "wirtschaft",
-    tone: "sand",
-    label: "Wirtschaft",
-    title: "Wirtschaft & Arbeit",
-    text: "Raum f\u00fcr gute Ideen: Standort, Handel, Ausschreibungen und wirtschaftliche Entwicklung.",
-    tags: ["Feierabendmarkt", "Ausschreibungen", "Standort"],
-    href: `${OFFICIAL_BASE}/Wirtschaft/index2.asp`,
-  },
-  {
-    id: "kultur",
-    tone: "navy",
-    label: "Kultur & Tourismus",
-    title: "Kultur & Entdecken",
-    text: "Neue Lieblingsorte, gute Geschichten und Kultur direkt vor der Haust\u00fcr.",
-    tags: ["Open-Air-Sommer", "Stadtb\u00fccherei", "Sehensw\u00fcrdigkeiten"],
-    href: `${OFFICIAL_BASE}/Kultur_Tourismus/autostart.asp`,
-  },
-  {
-    id: "sport",
-    tone: "lime",
-    label: "Sport & Freizeit",
-    title: "Sport & Freizeit",
-    text: "In Bewegung kommen, gemeinsam aktiv sein oder einfach die freie Zeit genie\u00dfen.",
-    tags: ["Beachanlage Nordpark", "Hallenbad", "Freizeit"],
-    href: `${OFFICIAL_BASE}/Sport_Freizeit/autostart.asp`,
-  },
-];
-
-const stories = [
-  {
-    title: "Wittringen von oben",
-    badge: "Lieblingsorte",
-    text: "Ein neuer Blick auf das Wasserschloss und die gr\u00fcnen Wege rundherum.",
-    image: new URL(
-      "../../Gladnbeck_schloss_luftaufnahme_v16_9_1200.jpeg",
-      import.meta.url,
-    ).href,
-    alt: "Luftaufnahme vom Wasserschloss Wittringen in Gladbeck",
-    position: "center center",
-    href: `${OFFICIAL_BASE}/Kultur_Tourismus/Sehenswuerdigkeiten/autostart.asp`,
-  },
-  {
-    title: "Wittringen & Rundtour",
-    badge: "Stadt entdecken",
-    text: "Am Wasser entlang und mitten ins Gr\u00fcne. Finde deine n\u00e4chste kleine Auszeit.",
-    image: new URL(
-      "../../csm_gladbeck_gladbecker-rundtour_bild01_1deed78dfb.jpg",
-      import.meta.url,
-    ).href,
-    alt: "Wasserschloss Wittringen mit Spiegelung im Wasser",
-    position: "center center",
-    href: `${OFFICIAL_BASE}/Kultur_Tourismus/Sehenswuerdigkeiten/autostart.asp`,
-  },
-  {
-    title: "Rathaus & Politik",
-    badge: "Service direkt",
-    text: "Ein Haus f\u00fcr die Stadt: Menschen, Politik und deine Anliegen an einem Ort.",
-    image: new URL(
-      "../../1906_115772_Rathaus_Gladbeck_klein (1).jpg",
-      import.meta.url,
-    ).href,
-    alt: "Historische Ansicht des Rathauses Gladbeck",
-    position: "center top",
-    href: `${OFFICIAL_BASE}/Rathaus_Politik/autostart.asp`,
-  },
-  {
-    title: "Erinnerungsorte",
-    badge: "Kulturraum",
-    text: "Orte, die Geschichte erz\u00e4hlen. Entdecke das kulturelle Ged\u00e4chtnis Gladbecks.",
-    image: new URL("../../3L_12_01_ehrm_01_td.jpg", import.meta.url).href,
-    alt: "Steinb\u00f6gen im Ehrenmal Gladbeck",
-    position: "center center",
-    href: `${OFFICIAL_BASE}/Kultur_Tourismus/autostart.asp`,
-  },
-];
-
-const videoSlots = [
-  {
-    tone: "navy",
-    badge: "Rathaus News",
-    title: "26. Ausgabe online",
-    text: "Die April-Ausgabe b\u00fcndelt aktuelle Themen aus der Stadtverwaltung in einem modularen Redaktionsformat.",
-    href: `${OFFICIAL_BASE}/index.asp?form=detail&db=404&id=5517`,
-    cta: "Zur Meldung",
-  },
-  {
-    tone: "lime",
-    badge: "Event-Teaser",
-    title: "Mobilit\u00e4ts- und Klimatag",
-    text: "Sonntag, 26. April 2026, 10 bis 15 Uhr am Wasserschloss Wittringen.",
-    href: `${OFFICIAL_BASE}/index.asp?form=detail&db=404&id=5498`,
-    cta: "Zum Termin",
-  },
-  {
-    tone: "light",
-    badge: "Sommerprogramm",
-    title: "Open-Air-Sommer",
-    text: "Das Sommerprogramm 2026: Musik, Begegnungen und Kultur unter freiem Himmel.",
-    href: `${OFFICIAL_BASE}/index.asp?form=detail&db=404&id=5525`,
-    cta: "Zum Programm",
-  },
-];
-
-const news = [
-  {
-    tone: "feature",
-    label: "Kultur",
-    date: "23.04.2026",
-    title: "Ein Sommer voller Kultur",
-    text: "Musik und Begegnungen unter freiem Himmel: ein R\u00fcckblick auf das Sommerprogramm 2026.",
-    href: `${OFFICIAL_BASE}/index.asp?form=detail&db=404&id=5525`,
-  },
-  {
-    label: "F\u00f6rderung",
-    date: "23.04.2026",
-    title: "Heimat-Preis 2026 startet mit Bewerbungsphase",
-    text: "Ein Preis f\u00fcr Menschen, die sich vor Ort engagieren. Die Meldung zur Bewerbungsphase im April 2026.",
-    href: `${OFFICIAL_BASE}/index.asp?form=detail&db=404&id=5524`,
-  },
-  {
-    label: "Dialog",
-    date: "22.04.2026",
-    title: "Ellinghorst: Stadtgespr\u00e4ch mit der B\u00fcrgermeisterin",
-    text: "Fragen stellen, Ideen teilen und miteinander ins Gespr\u00e4ch kommen: der Dialog in Ellinghorst.",
-    href: `${OFFICIAL_BASE}/index.asp?form=detail&db=404&id=5526`,
-  },
-  {
-    label: "Europa",
-    date: "21.04.2026",
-    title: "Jugendkonferenz 2026 setzt europ\u00e4ischen Akzent",
-    text: "Die vierte Jugendkonferenz brachte im Mai 2026 junge Menschen zum europ\u00e4ischen Austausch zusammen.",
-    href: `${OFFICIAL_BASE}/index.asp?form=detail&db=404&id=5521`,
-  },
-  {
-    label: "Mobilit\u00e4t",
-    date: "17.04.2026",
-    title: "Stra\u00dfensanierungen starten in mehreren Stadtteilen",
-    text: "Hintergr\u00fcnde zu den im April gestarteten Arbeiten und den betroffenen Stadtteilen.",
-    href: `${OFFICIAL_BASE}/index.asp?form=detail&db=404&id=5519`,
-  },
-  {
-    label: "Stadtentwicklung",
-    date: "31.03.2026",
-    title: "Radvorrangroute: Gladbeck plant Anschluss ab 2027",
-    text: "Die Planungen zum Anschluss Gladbecks an die Radvorrangroute im \u00dcberblick.",
-    href: `${OFFICIAL_BASE}/index.asp?form=detail&db=404&id=5507`,
-  },
-];
-
-const agenda = [
-  {
-    label: "23.04.2026",
-    title: "Zukunftsforum 'Gladbeck 2035'",
-    text: "\u00d6ffentliche Veranstaltung am 23. April 2026, 17 bis 18.30 Uhr, im Ratssaal des Alten Rathauses.",
-    href: `${OFFICIAL_BASE}/index.asp?form=detail&db=404&id=5516`,
-  },
-  {
-    label: "26.04.2026",
-    title: "Mobilit\u00e4ts- und Klimatag",
-    text: "Familienfest rund um nachhaltige Mobilit\u00e4t und Klimaschutz am Wasserschloss Wittringen.",
-    href: `${OFFICIAL_BASE}/index.asp?form=detail&db=404&id=5498`,
-  },
-  {
-    label: "30.04.2026",
-    title: "Empfang der Arbeitnehmer:innen",
-    text: "B\u00fcrgermeisterin Bettina Weist l\u00e4dt um 18.30 Uhr in den Ratssaal des Alten Rathauses ein.",
-    href: `${OFFICIAL_BASE}/index.asp?form=detail&db=404&id=5514`,
-  },
-  {
-    label: "Mai 2026",
-    title: "Europ\u00e4ische Jugendkonferenz",
-    text: "Gladbeck baut die internationale Zusammenarbeit mit Jugendlichen weiter aus.",
-    href: `${OFFICIAL_BASE}/index.asp?form=detail&db=404&id=5521`,
-  },
-];
-
-const menuSections = [
-  {
-    id: "rathaus",
-    title: "Rathaus & Politik",
-    description: "Service, Kontakte und Entscheidungen.",
-    items: [
-      {
-        title: "Serviceportal",
-        text: "Digitale Dienstleistungen der Stadt Gladbeck",
-        href: "https://serviceportal.gladbeck.de/",
-      },
-      {
-        title: "Ratssitzungen",
-        text: "Video\u00fcbertragungen und Sitzungsinformationen",
-        href: `${OFFICIAL_BASE}/Rathaus_Politik/Politik/Rat_der_Stadt/Videouebertragungen.asp`,
-      },
-      {
-        title: "Rufnummern",
-        text: "Kontakte und Durchwahlen im Rathaus",
-        href: `${OFFICIAL_BASE}/Rathaus_Politik/Rathaus/Rathaus_kompakt/Rufnummern.asp`,
-      },
-    ],
-  },
-  {
-    id: "familie",
-    title: "Familie & Bildung",
-    description: "Schule, Jugend und Angebote f\u00fcr Generationen.",
-    items: [
-      {
-        title: "Schule",
-        text: "Schulbereich der Stadt Gladbeck",
-        href: `${OFFICIAL_BASE}/Familie_Bildung/Bildung/Schulen/autostart.asp`,
-      },
-      {
-        title: "Senioren",
-        text: "Angebote und Informationen f\u00fcr \u00e4ltere Menschen",
-        href: `${OFFICIAL_BASE}/Familie_Bildung/Senioren/autostart.asp`,
-      },
-      {
-        title: "Jugendrat",
-        text: "Mitwirkung und Beteiligung f\u00fcr junge Gladbecker:innen",
-        href: `${OFFICIAL_BASE}/Familie_Bildung/Jugend/Jugendrat/autostart.asp`,
-      },
-    ],
-  },
-  {
-    id: "wohnen",
-    title: "Leben & Wohnen",
-    description: "Wohnen, Bauen und unterwegs sein.",
-    items: [
-      {
-        title: "Aktuelle Baustellen",
-        text: "Sperrungen und Verkehrslagen",
-        href: `${OFFICIAL_BASE}/Leben_Wohnen/Ingenieuramt_Beta/Aktuelle_Baustellen/autostart.asp`,
-      },
-      {
-        title: "Baugebiete",
-        text: "Wohnen und neue Fl\u00e4chen in Gladbeck",
-        href: `${OFFICIAL_BASE}/Leben_Wohnen/Bauen_Wohnen/Baugebiete_in_Gladbeck.asp`,
-      },
-      {
-        title: "Geodatenportal",
-        text: "Karten, Daten und Raumbezug",
-        href: "http://www.gladbeck.de/geodatenportal",
-      },
-    ],
-  },
-  {
-    id: "wirtschaft",
-    title: "Wirtschaft",
-    description: "Standort, Handel und gute Ideen.",
-    items: [
-      {
-        title: "Wirtschaftsbereich",
-        text: "Offizieller Einstieg in den Wirtschaftsauftritt",
-        href: `${OFFICIAL_BASE}/Wirtschaft/index2.asp`,
-      },
-      {
-        title: "Ausschreibungen",
-        text: "UVGO- und VOB-Ausschreibungen der Stadt",
-        href: `${OFFICIAL_BASE}/Rathaus_Politik/Rathaus/Ausschreibungen.asp?highmain=2&highsub=8&highsubsub=0`,
-      },
-      {
-        title: "Feierabendmarkt",
-        text: "Neustart der Veranstaltungsreihe auf dem Willy-Brandt-Platz",
-        href: `${OFFICIAL_BASE}/index.asp?form=detail&db=404&id=5506`,
-      },
-    ],
-  },
-  {
-    id: "kultur",
-    title: "Kultur & Tourismus",
-    description: "Kultur erleben und Lieblingsorte entdecken.",
-    items: [
-      {
-        title: "Sehensw\u00fcrdigkeiten",
-        text: "Klassische touristische Einstiege",
-        href: `${OFFICIAL_BASE}/Kultur_Tourismus/Sehenswuerdigkeiten/autostart.asp`,
-      },
-      {
-        title: "Open-Air-Sommer",
-        text: "Aktuelles Sommerprogramm der Stadt",
-        href: `${OFFICIAL_BASE}/index.asp?form=detail&db=404&id=5525`,
-      },
-      {
-        title: "Stadtb\u00fccherei",
-        text: "Kleinkunst, Lesung und Kindertheater",
-        href: `${OFFICIAL_BASE}/index.asp?form=detail&db=404&id=5522`,
-      },
-    ],
-  },
-  {
-    id: "sport",
-    title: "Sport & Freizeit",
-    description: "Aktiv werden und Freizeit genie\u00dfen.",
-    items: [
-      {
-        title: "Sport & Freizeit",
-        text: "Offizieller Bereich der Stadt",
-        href: `${OFFICIAL_BASE}/Sport_Freizeit/autostart.asp`,
-      },
-      {
-        title: "Beachanlage Nordpark",
-        text: "Die Anlage ist seit dem 7. April 2026 wieder ge\u00f6ffnet",
-        href: `${OFFICIAL_BASE}/index.asp?form=detail&db=404&id=5508`,
-      },
-      {
-        title: "Mobilit\u00e4ts- und Klimatag",
-        text: "Familienfest mit Aktivitaeten am Wasserschloss Wittringen",
-        href: `${OFFICIAL_BASE}/index.asp?form=detail&db=404&id=5498`,
-      },
-    ],
-  },
-];
+import {
+  pulseItems,
+  quicklinks,
+  themes,
+  stories,
+  videoSlots,
+  news,
+  agenda,
+  menuSections,
+  detailPages,
+} from "./content.js";
 
 const accessFeatures = [
   {
@@ -469,7 +49,6 @@ const menuOverlay = document.querySelector("#menu-overlay");
 const menuPanel = document.querySelector(".menu-panel");
 const menuToggle = document.querySelector(".menu-toggle");
 const footerYear = document.querySelector("#footer-year");
-const footerContentDate = document.querySelector("#footer-content-date");
 const newsletterForm = document.querySelector("#newsletter-form");
 const newsletterEmail = document.querySelector("#newsletter-email");
 const newsletterConsent = document.querySelector("#newsletter-consent");
@@ -482,7 +61,7 @@ function renderPulse() {
   pulseGrid.innerHTML = pulseItems
     .map(
       (item, index) => `
-        <a class="pulse-card ${index === 0 ? "pulse-card--feature" : ""}" href="${item.href}" ${EXTERNAL_ATTRS}>
+        <a class="pulse-card ${index === 0 ? "pulse-card--feature" : ""}" href="${item.href}">
           <div class="pulse-card__meta">
             <span>${item.label}</span>
             <span>${String(index + 1).padStart(2, "0")}</span>
@@ -500,7 +79,7 @@ function renderQuicklinks() {
   quicklinksGrid.innerHTML = quicklinks
     .map(
       (item) => `
-        <a class="quicklink-card quicklink-card--${item.tone}" href="${item.href}" ${EXTERNAL_ATTRS}>
+        <a class="quicklink-card quicklink-card--${item.tone}" href="${item.href}">
           <div class="quicklink-card__meta">
             <span>${item.label}</span>
             <span>${item.meta}</span>
@@ -510,7 +89,7 @@ function renderQuicklinks() {
             <p>${item.text}</p>
           </div>
           <div class="quicklink-card__footer">
-            <span class="quicklink-card__cta">Zum offiziellen Ziel</span>
+            <span class="quicklink-card__cta">Service entdecken</span>
             <span class="quicklink-card__arrow" aria-hidden="true">&rarr;</span>
           </div>
         </a>
@@ -523,7 +102,7 @@ function renderThemes() {
   themesGrid.innerHTML = themes
     .map(
       (theme) => `
-        <a class="theme-card theme-card--${theme.tone}" id="${theme.id}" href="${theme.href}" ${EXTERNAL_ATTRS}>
+        <a class="theme-card theme-card--${theme.tone}" id="${theme.id}" href="${theme.href}">
           <div class="theme-card__meta">
             <span>${theme.label}</span>
             <span class="theme-card__arrow" aria-hidden="true">&rarr;</span>
@@ -543,7 +122,7 @@ function renderStories() {
   storiesRail.innerHTML = stories
     .map(
       (story) => `
-        <a class="story-card" href="${story.href}" ${EXTERNAL_ATTRS}>
+        <a class="story-card" href="${story.href}">
           <img src="${story.image}" alt="${story.alt}" loading="lazy" style="object-position: ${story.position};" />
           <div class="story-card__content">
             <span class="story-card__badge">${story.badge}</span>
@@ -615,7 +194,7 @@ function renderVideoSlots() {
   videoSlotsGrid.innerHTML = videoSlots
     .map(
       (slot) => `
-        <a class="video-slot video-slot--${slot.tone}" href="${slot.href}" ${EXTERNAL_ATTRS}>
+        <a class="video-slot video-slot--${slot.tone}" href="${slot.href}">
           <span class="video-slot__badge">${slot.badge}</span>
           <h3>${slot.title}</h3>
           <p>${slot.text}</p>
@@ -630,14 +209,14 @@ function renderNews() {
   newsGrid.innerHTML = news
     .map(
       (item) => `
-        <a class="news-card ${item.tone ? `news-card--${item.tone}` : ""}" href="${item.href}" ${EXTERNAL_ATTRS}>
+        <a class="news-card ${item.tone ? `news-card--${item.tone}` : ""}" href="${item.href}">
           <div class="news-card__meta">
             <span>${item.label}</span>
             <span>${item.date}</span>
           </div>
           <h3>${item.title}</h3>
           <p>${item.text}</p>
-          <span class="news-card__cta">Weiter auf gladbeck.de</span>
+          <span class="news-card__cta">Beispielbeitrag lesen</span>
         </a>
       `,
     )
@@ -648,10 +227,10 @@ function renderAgenda() {
   agendaList.innerHTML = agenda
     .map(
       (item) => `
-        <a class="agenda-item" href="${item.href}" ${EXTERNAL_ATTRS}>
+        <a class="agenda-item" href="${item.href}">
           <div class="agenda-item__meta">
             <span>${item.label}</span>
-            <span>Termin</span>
+            <span>Beispieltermin</span>
           </div>
           <h3>${item.title}</h3>
           <p>${item.text}</p>
@@ -938,9 +517,7 @@ function renderMenu() {
             (item) =>
               '<li><a class="menu-wheel-item" href="' +
               item.href +
-              '" ' +
-              EXTERNAL_ATTRS +
-              " data-menu-item><strong>" +
+              '" data-menu-item><strong>' +
               item.title +
               "</strong><span>" +
               item.text +
@@ -1137,7 +714,7 @@ function setupMenu() {
   let readable = window.matchMedia("(prefers-contrast: more)").matches;
   try {
     readable =
-      readable || localStorage.getItem("gladbeck-menu-contrast") === "true";
+      readable || localStorage.getItem("deine-stadt-menu-contrast") === "true";
   } catch {
     /* Device preferences also work when storage is unavailable. */
   }
@@ -1146,7 +723,7 @@ function setupMenu() {
     readable = !readable;
     applyContrast(readable);
     try {
-      localStorage.setItem("gladbeck-menu-contrast", String(readable));
+      localStorage.setItem("deine-stadt-menu-contrast", String(readable));
     } catch {
       /* Keep the preference for this page view. */
     }
@@ -1439,6 +1016,55 @@ function setupMenu() {
   }
 }
 
+function renderDetailPage() {
+  const id = new URLSearchParams(location.search).get("seite");
+  if (id === null) return;
+
+  const item = detailPages.get(id);
+  const detail = document.querySelector("#detail-page");
+  document.querySelector("#home-content").hidden = true;
+  detail.hidden = false;
+  const title = item?.title || "Diese Seite gibt es nicht";
+  document.title = title + " | Deine Stadt";
+  document.querySelector("#detail-title").textContent = title;
+  document.querySelector("#detail-category").textContent =
+    item?.category || "Orientierung";
+  document.querySelector("#detail-intro").textContent =
+    item?.text ||
+    "Nutze die Suche oder entdecke die Themen auf der Startseite.";
+  document.querySelector(".detail-notice").hidden = !item;
+
+  const section = menuSections.find(
+    (entry) =>
+      entry.id === id || entry.items.some((link) => link.href === item?.href),
+  );
+  const related = (section?.items || quicklinks)
+    .filter((entry) => entry.href !== item?.href)
+    .slice(0, 3);
+  const list = document.querySelector("#detail-links");
+  related.forEach((entry) => {
+    const link = document.createElement("a");
+    link.className = "quicklink-card quicklink-card--light";
+    link.href = entry.href;
+    const heading = document.createElement("h3");
+    heading.textContent = entry.title;
+    const description = document.createElement("p");
+    description.textContent = entry.text;
+    const cta = document.createElement("span");
+    cta.className = "quicklink-card__cta";
+    cta.textContent = "Mehr erfahren \u2192";
+    link.append(heading, description, cta);
+    list.append(link);
+  });
+
+  // Landing-page shortcuts must leave the detail route, not target hidden content.
+  document.querySelectorAll('a[href^="#"]').forEach((link) => {
+    const hash = link.getAttribute("href");
+    if (hash !== "#hauptinhalt") link.href = "./" + hash;
+  });
+  document.querySelector("#detail-title").focus({ preventScroll: true });
+}
+
 function setupReveal() {
   if (prefersReducedMotion || !("IntersectionObserver" in window)) return;
   const observer = new IntersectionObserver(
@@ -1471,8 +1097,8 @@ function init() {
   setupMenuFocusWheel();
   setupMenu();
   setupNewsletter();
+  renderDetailPage();
   setupReveal();
   footerYear.textContent = new Date().getFullYear();
-  footerContentDate.textContent = CONTENT_STAND;
 }
 init();
